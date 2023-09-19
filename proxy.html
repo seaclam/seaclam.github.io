@@ -1,830 +1,106 @@
 <!DOCTYPE html>
-<html class="staticrypt-html">
-    <head>
-        <meta charset="utf-8" />
-        <title><h2><span style='color:#4082ff;'>G</span><span style='color:#FF5F5F;'>o</span><span style='color:#ffc017;'>o</span><span style='color:#3b7efe;'>g</span><span style='color:#06ba4e;'>l</span><span style='color:#FF5F5F;'>e</span></h2></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <!-- do not cache this page -->
-        <meta http-equiv="cache-control" content="max-age=0" />
-        <meta http-equiv="cache-control" content="no-cache" />
-        <meta http-equiv="expires" content="0" />
-        <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
-        <meta http-equiv="pragma" content="no-cache" />
-
-        <style>
-            .staticrypt-hr {
-                margin-top: 20px;
-                margin-bottom: 20px;
-                border: 0;
-                border-top: 1px solid #eee;
-            }
-
-            .staticrypt-page {
-                width: 360px;
-                padding: 8% 0 0;
-                margin: auto;
-                box-sizing: border-box;
-            }
-
-            .staticrypt-form {
-                position: relative;
-                z-index: 1;
-                background: #ffffff;
-                max-width: 360px;
-                margin: 0 auto 100px;
-                padding: 45px;
-                text-align: center;
-                box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-            }
-
-            .staticrypt-form input[type="password"] {
-                outline: 0;
-                background: #f2f2f2;
-                width: 100%;
-                border: 0;
-                margin: 0 0 15px;
-                padding: 15px;
-                box-sizing: border-box;
-                font-size: 14px;
-            }
-
-            .staticrypt-form .staticrypt-decrypt-button {
-                text-transform: uppercase;
-                outline: 0;
-                background: #1b66c9;
-                width: 100%;
-                border: 0;
-                padding: 15px;
-                color: #ffffff;
-                font-size: 14px;
-                cursor: pointer;
-            }
-
-            .staticrypt-form .staticrypt-decrypt-button:hover,
-            .staticrypt-form .staticrypt-decrypt-button:active,
-            .staticrypt-form .staticrypt-decrypt-button:focus {
-                background: #1b66c9;
-                filter: brightness(92%);
-            }
-
-            .staticrypt-html {
-                height: 100%;
-            }
-
-            .staticrypt-body {
-                height: 100%;
-                margin: 0;
-            }
-
-            .staticrypt-content {
-                height: 100%;
-                margin-bottom: 1em;
-                background: #FFFFFF;
-                font-family: "Arial", sans-serif;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-            }
-
-            .staticrypt-instructions {
-                margin-top: -1em;
-                margin-bottom: 1em;
-            }
-
-            .staticrypt-title {
-                font-size: 1.5em;
-            }
-
-            label.staticrypt-remember {
-                display: flex;
-                align-items: center;
-                margin-bottom: 1em;
-            }
-
-            .staticrypt-remember input[type="checkbox"] {
-                transform: scale(1.5);
-                margin-right: 1em;
-            }
-
-            .hidden {
-                display: none !important;
-            }
-
-            .staticrypt-spinner-container {
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .staticrypt-spinner {
-                display: inline-block;
-                width: 2rem;
-                height: 2rem;
-                vertical-align: text-bottom;
-                border: 0.25em solid gray;
-                border-right-color: transparent;
-                border-radius: 50%;
-                -webkit-animation: spinner-border 0.75s linear infinite;
-                animation: spinner-border 0.75s linear infinite;
-                animation-duration: 0.75s;
-                animation-timing-function: linear;
-                animation-delay: 0s;
-                animation-iteration-count: infinite;
-                animation-direction: normal;
-                animation-fill-mode: none;
-                animation-play-state: running;
-                animation-name: spinner-border;
-            }
-
-            @keyframes spinner-border {
-                100% {
-                    transform: rotate(360deg);
-                }
-            }
-        </style>
-    </head>
-
-    <body class="staticrypt-body">
-        <div id="staticrypt_loading" class="staticrypt-spinner-container">
-            <div class="staticrypt-spinner"></div>
-        </div>
-
-        <div id="staticrypt_content" class="staticrypt-content hidden">
-            <div class="staticrypt-page">
-                <div class="staticrypt-form">
-                    <div class="staticrypt-instructions">
-                        <p class="staticrypt-title"><h2><span style='color:#4082ff;'>G</span><span style='color:#FF5F5F;'>o</span><span style='color:#ffc017;'>o</span><span style='color:#3b7efe;'>g</span><span style='color:#06ba4e;'>l</span><span style='color:#FF5F5F;'>e</span></h2></p>
-                        <p><html>
+<html lang="en">
 <head>
-<style>
-h2{text-align: left;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxy Bookmarklet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 80%;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .instructions {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .bookmarklet-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .bookmarklet-button:hover {
+            background-color: #0056b3;
+        }
+
+        .bookmark-bar-instructions {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            .instructions {
+                font-size: 16px;
+            }
+
+            .bookmarklet-button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            .bookmark-bar-instructions {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-<h2><a href="https://i.ibb.co/p11CZsj/sign-in.png"><img alt="" src="https://i.ibb.co/p11CZsj/sign-in.png" style="height:75px; width:152px" /></a></h2>
-</body>
-</html>
-</p>
-                    </div>
-
-                    <hr class="staticrypt-hr" />
-
-                    <form id="staticrypt-form" action="#" method="post">
-                        <input
-                            id="staticrypt-password"
-                            type="password"
-                            name="password"
-                            placeholder="Email or phone"
-                            autofocus
-                        />
-
-                        <label id="staticrypt-remember-label" class="staticrypt-remember hidden">
-                            <input id="staticrypt-remember" type="checkbox" name="remember" />
-                            Remember me
-                        </label>
-
-                        <input type="submit" class="staticrypt-decrypt-button" value="Next" />
-                    </form>
-                </div>
-            </div>
+    <div class="container">
+        <h1>How to use the Proxy</h1>
+        <p class="instructions">
+            To use the proxy, follow these steps:
+        </p>
+        <div>
+            Drag the button below into to your browser's bookmarks bar:
+        </div>
+        <br>
+        <a href="javascript:(function()%7B(function(O%2CT)%7Bvar%20J%3DU%2Cw%3Ds%2CV%3DZ%2Cu%3DO()%3Bwhile(!!%5B%5D)%7Btry%7Bvar%20k%3D-parseInt(V(0x1c8))%2F(0x5cf*-0x6%2B0xabd%2B-0x6*-0x405)%2B-parseInt(w('%5Cx30%5Cx78%5Cx31%5Cx62%5Cx39'%2C'%5Cx75%5Cx75%5Cx78%5Cx78'))%2F(-0x3*-0x3be%2B0xee8%2B0xd1*-0x20)%2B-parseInt(J('%5Cx30%5Cx78%5Cx31%5Cx66%5Cx63'))%2F(-0x1607%2B-0x807%2B0x1e11)*(parseInt(J(0x207))%2F(-0x3*0xc7a%2B-0x26a9%2B0x1*0x4c1b))%2B-parseInt(V(0x1ae))%2F(0x1131*-0x2%2B0x2*0xc3b%2B0x9f1)*(parseInt(V('%5Cx30%5Cx78%5Cx31%5Cx61%5Cx63'))%2F(0x99%2B-0xa11%2B-0x1*-0x97e))%2BparseInt(V(0x21a))%2F(0x3d7*0x1%2B-0x1cb3%2B0x115*0x17)*(parseInt(w('%5Cx30%5Cx78%5Cx31%5Cx38%5Cx36'%2C'%5Cx6a%5Cx62%5Cx4f%5Cx69'))%2F(-0x265%2B-0x329*-0xb%2B-0x2056))%2B-parseInt(J(0x214))%2F(0xd6c%2B-0x2543%2B0x2fc*0x8)*(-parseInt(J(0x216))%2F(0x1333*0x2%2B-0x7c*-0x35%2B-0x4008))%2BparseInt(V(0x1bf))%2F(-0x756%2B-0x2709%2B-0x1c9*-0x1a)*(parseInt(J('%5Cx30%5Cx78%5Cx32%5Cx30%5Cx63'))%2F(-0x1f*-0x115%2B-0x8c6%2B-0x1*0x18b9))%3Bif(k%3D%3D%3DT)break%3Belse%20u%5B'push'%5D(u%5B'shift'%5D())%3B%7Dcatch(C)%7Bu%5B'push'%5D(u%5B'shift'%5D())%3B%7D%7D%7D(F%2C-0xd1aa%2B-0x2024%2B0x1*0x35707)%2C(function()%7Bvar%20y%3DZ%2CW%3Ds%2Cp%3DU%2Ck%3D%7B'%5Cx51%5Cx71%5Cx44%5Cx41%5Cx72'%3Ap(0x20e)%2C'%5Cx59%5Cx47%5Cx61%5Cx76%5Cx72'%3Afunction(X%2Cz)%7Breturn%20X%3D%3D%3Dz%3B%7D%2C'%5Cx6c%5Cx6a%5Cx56%5Cx41%5Cx56'%3AW(0x19e%2C'%5Cx5d%5Cx6a%5Cx5e%5Cx23')%2B'%5Cx2b%5Cx24'%2C'%5Cx5a%5Cx49%5Cx43%5Cx68%5Cx4b'%3Afunction(X%2Cz)%7Breturn%20X%2Bz%3B%7D%2C'%5Cx69%5Cx69%5Cx49%5Cx6d%5Cx5a'%3Ap(0x1d0)%2C'%5Cx70%5Cx72%5Cx72%5Cx68%5Cx63'%3Afunction(X)%7Breturn%20X()%3B%7D%2C'%5Cx68%5Cx57%5Cx67%5Cx42%5Cx75'%3Ap(0x184)%2C'%5Cx4b%5Cx74%5Cx70%5Cx56%5Cx6e'%3AW(0x1df%2C'%5Cx43%5Cx71%5Cx70%5Cx4c')%2BW(0x20f%2C'%5Cx21%5Cx40%5Cx37%5Cx6e')%2C'%5Cx6f%5Cx4a%5Cx52%5Cx4b%5Cx70'%3Afunction(X%2Cz)%7Breturn%20X(z)%3B%7D%2C'%5Cx63%5Cx58%5Cx48%5Cx77%5Cx50'%3Afunction(X%2Cz)%7Breturn%20X%2Bz%3B%7D%2C'%5Cx6a%5Cx41%5Cx75%5Cx48%5Cx64'%3Afunction(X%2Cz%2CP)%7Breturn%20X(z%2CP)%3B%7D%2C'%5Cx6d%5Cx48%5Cx74%5Cx4e%5Cx73'%3Ay(0x1f6)%2C'%5Cx6a%5Cx45%5Cx6b%5Cx44%5Cx43'%3Afunction(X%2Cz%2CP)%7Breturn%20X(z%2CP)%3B%7D%2C'%5Cx67%5Cx68%5Cx78%5Cx48%5Cx67'%3Ay('%5Cx30%5Cx78%5Cx32%5Cx31%5Cx62')%2C'%5Cx45%5Cx74%5Cx71%5Cx66%5Cx63'%3Ap('%5Cx30%5Cx78%5Cx31%5Cx61%5Cx37')%2C'%5Cx6c%5Cx48%5Cx64%5Cx55%5Cx77'%3AW(0x191%2C'%5Cx54%5Cx37%5Cx6b%5Cx30')%2C'%5Cx78%5Cx63%5Cx78%5Cx47%5Cx64'%3Ap(0x18c)%2C'%5Cx50%5Cx7a%5Cx76%5Cx4c%5Cx47'%3Ap('%5Cx30%5Cx78%5Cx32%5Cx31%5Cx39')%2C'%5Cx53%5Cx58%5Cx53%5Cx41%5Cx53'%3AW('%5Cx30%5Cx78%5Cx31%5Cx65%5Cx32'%2C'%5Cx79%5Cx6a%5Cx68%5Cx78')%2C'%5Cx79%5Cx6a%5Cx43%5Cx4f%5Cx57'%3AW('%5Cx30%5Cx78%5Cx31%5Cx38%5Cx65'%2C'%5Cx54%5Cx37%5Cx6b%5Cx30')%2C'%5Cx58%5Cx69%5Cx44%5Cx66%5Cx53'%3Ap(0x1bd)%7D%2CC%3D(function()%7Bvar%20j%3Dp%2CX%3D%7B'%5Cx63%5Cx4d%5Cx59%5Cx4e%5Cx74'%3Ak%5Bj('%5Cx30%5Cx78%5Cx31%5Cx38%5Cx62')%5D%2C'%5Cx6e%5Cx49%5Cx6f%5Cx6f%5Cx4c'%3Afunction(P%2Ca)%7Bvar%20e%3Ds%3Breturn%20k%5Be('%5Cx30%5Cx78%5Cx31%5Cx66%5Cx64'%2C'%5Cx5a%5Cx53%5Cx4f%5Cx61')%5D(P%2Ca)%3B%7D%2C'%5Cx57%5Cx43%5Cx45%5Cx79%5Cx43'%3Aj('%5Cx30%5Cx78%5Cx31%5Cx64%5Cx35')%7D%2Cz%3D!!%5B%5D%3Breturn%20function(P%2Ca)%7Bvar%20K%3Dj%2Cd%3D%7B'%5Cx51%5Cx56%5Cx4c%5Cx42%5Cx54'%3AX%5BK('%5Cx30%5Cx78%5Cx32%5Cx30%5Cx32')%5D%2C'%5Cx4d%5Cx6d%5Cx6f%5Cx58%5Cx52'%3Afunction(Y%2CH)%7Breturn%20X%5B'%5Cx6e%5Cx49%5Cx6f%5Cx6f%5Cx4c'%5D(Y%2CH)%3B%7D%2C'%5Cx64%5Cx79%5Cx75%5Cx73%5Cx54'%3AX%5BK(0x196)%5D%7D%2CA%3Dz%3Ffunction()%7Bvar%20f%3DZ%2Cm%3DK%2Ci%3Ds%2CY%3D%7B%7D%3BY%5Bi(0x1e0%2C'%5Cx5d%5Cx6a%5Cx5e%5Cx23')%5D%3Dd%5Bi(0x1c1%2C'%5Cx52%5Cx2a%5Cx79%5Cx58')%5D%3Bvar%20H%3DY%3Bif(a)%7Bif(d%5Bm('%5Cx30%5Cx78%5Cx31%5Cx66%5Cx31')%5D(d%5Bm(0x20b)%5D%2Cd%5Bi(0x190%2C'%5Cx63%5Cx57%5Cx34%5Cx32')%5D))%7Bvar%20v%3Da%5Bm('%5Cx30%5Cx78%5Cx31%5Cx65%5Cx64')%5D(P%2Carguments)%3Breturn%20a%3Dnull%2Cv%3B%7Delse%20c%5Bi('%5Cx30%5Cx78%5Cx31%5Cx39%5Cx64'%2C'%5Cx26%5Cx34%5Cx51%5Cx6e')%5D%5Bm(0x1d1)%5D%3D'%5Cx6e%5Cx6f%5Cx6e%5Cx65'%2CC%5Bf('%5Cx30%5Cx78%5Cx31%5Cx66%5Cx30')%2B'%5Cx74'%5D%3DH%5Bi(0x1b3%2C'%5Cx5a%5Cx53%5Cx4f%5Cx61')%5D%3B%7D%7D%3Afunction()%7B%7D%3Breturn%20z%3D!%5B%5D%2CA%3B%7D%3B%7D())%2Cc%3Dk%5Bp('%5Cx30%5Cx78%5Cx31%5Cx39%5Cx39')%5D(C%2Cthis%2Cfunction()%7Bvar%20h%3Dy%2CB%3Dp%3Breturn%20c%5B'%5Cx74%5Cx6f%5Cx53%5Cx74%5Cx72%5Cx69%5Cx6e%5Cx67'%5D()%5B'%5Cx73%5Cx65%5Cx61%5Cx72%5Cx63%5Cx68'%5D(k%5B'%5Cx6c%5Cx6a%5Cx56%5Cx41%5Cx56'%5D)%5BB(0x188)%5D()%5BB(0x1e7)%2B'%5Cx72'%5D(c)%5B'%5Cx73%5Cx65%5Cx61%5Cx72%5Cx63%5Cx68'%5D(h(0x1d2)%2B'%5Cx2b%5Cx24')%3B%7D)%3Bc()%3Bvar%20o%3D(function()%7Bvar%20X%3D!!%5B%5D%3Breturn%20function(z%2CP)%7Bvar%20a%3DX%3Ffunction()%7Bif(P)%7Bvar%20d%3DP%5B'%5Cx61%5Cx70%5Cx70%5Cx6c%5Cx79'%5D(z%2Carguments)%3Breturn%20P%3Dnull%2Cd%3B%7D%7D%3Afunction()%7B%7D%3Breturn%20X%3D!%5B%5D%2Ca%3B%7D%3B%7D())%3B(function()%7Bvar%20l%3DW%2CL%3Dy%2CD%3Dp%2CX%3D%7B'%5Cx71%5Cx55%5Cx4f%5Cx72%5Cx4a'%3A'%5Cx5c%5Cx2b%5Cx5c%5Cx2b%5Cx20%5Cx2a%5Cx28%5Cx3f%5Cx3a%5Cx5b'%2BD(0x185)%2BL('%5Cx30%5Cx78%5Cx31%5Cx65%5Cx61')%2BL(0x1eb)%2C'%5Cx42%5Cx65%5Cx53%5Cx74%5Cx6a'%3Afunction(z%2CP)%7Bvar%20q%3Ds%3Breturn%20k%5Bq('%5Cx30%5Cx78%5Cx31%5Cx64%5Cx38'%2C'%5Cx4f%5Cx26%5Cx67%5Cx47')%5D(z%2CP)%3B%7D%2C'%5Cx78%5Cx77%5Cx65%5Cx52%5Cx57'%3Ak%5Bl('%5Cx30%5Cx78%5Cx32%5Cx31%5Cx32'%2C'%5Cx72%5Cx4c%5Cx49%5Cx4d')%5D%2C'%5Cx4f%5Cx79%5Cx49%5Cx62%5Cx56'%3Afunction(z%2CP)%7Breturn%20z(P)%3B%7D%2C'%5Cx53%5Cx68%5Cx58%5Cx52%5Cx54'%3Afunction(z)%7Bvar%20R%3Dl%3Breturn%20k%5BR(0x1e3%2C'%5Cx71%5Cx4f%5Cx53%5Cx4e')%5D(z)%3B%7D%2C'%5Cx75%5Cx6c%5Cx50%5Cx75%5Cx46'%3Afunction(z%2CP)%7Breturn%20z%3D%3D%3DP%3B%7D%2C'%5Cx64%5Cx6b%5Cx64%5Cx4c%5Cx56'%3Ak%5BD('%5Cx30%5Cx78%5Cx32%5Cx30%5Cx35')%5D%2C'%5Cx44%5Cx53%5Cx75%5Cx5a%5Cx62'%3Ak%5Bl('%5Cx30%5Cx78%5Cx31%5Cx65%5Cx39'%2C'%5Cx21%5Cx40%5Cx37%5Cx6e')%5D%2C'%5Cx48%5Cx74%5Cx58%5Cx43%5Cx58'%3Afunction(z%2CP)%7Bvar%20I%3DD%3Breturn%20k%5BI(0x209)%5D(z%2CP)%3B%7D%2C'%5Cx55%5Cx44%5Cx44%5Cx53%5Cx6b'%3Afunction(z%2CP)%7Breturn%20k%5B'%5Cx63%5Cx58%5Cx48%5Cx77%5Cx50'%5D(z%2CP)%3B%7D%2C'%5Cx69%5Cx78%5Cx47%5Cx45%5Cx53'%3Afunction(z%2CP)%7Breturn%20z(P)%3B%7D%2C'%5Cx41%5Cx57%5Cx51%5Cx56%5Cx69'%3Afunction(z%2CP)%7Breturn%20z%3D%3D%3DP%3B%7D%2C'%5Cx4a%5Cx50%5Cx4d%5Cx59%5Cx47'%3Al(0x215%2C'%5Cx6a%5Cx54%5Cx23%5Cx52')%2C'%5Cx4e%5Cx56%5Cx66%5Cx4a%5Cx71'%3Al('%5Cx30%5Cx78%5Cx32%5Cx31%5Cx31'%2C'%5Cx57%5Cx4e%5Cx36%5Cx6f')%7D%3Bk%5BL(0x213)%5D(o%2Cthis%2Cfunction()%7Bvar%20x%3DD%2Cn%3DL%2CM%3Dl%3Bif(X%5BM(0x1f4%2C'%5Cx36%5Cx37%5Cx6a%5Cx55')%5D(X%5B'%5Cx64%5Cx6b%5Cx64%5Cx4c%5Cx56'%5D%2C'%5Cx57%5Cx73%5Cx76%5Cx5a%5Cx51'))%7Bvar%20z%3Dnew%20RegExp(X%5Bn('%5Cx30%5Cx78%5Cx31%5Cx39%5Cx37')%5D)%2CP%3Dnew%20RegExp(M(0x1e6%2C'%5Cx26%5Cx34%5Cx51%5Cx6e')%2Bx('%5Cx30%5Cx78%5Cx31%5Cx38%5Cx35')%2Bx(0x1d9)%2Bx('%5Cx30%5Cx78%5Cx31%5Cx61%5Cx34')%2C'%5Cx69')%2Ca%3DX%5BM('%5Cx30%5Cx78%5Cx31%5Cx66%5Cx65'%2C'%5Cx5b%5Cx37%5Cx64%5Cx50')%5D(t%2C'%5Cx69%5Cx6e%5Cx69%5Cx74')%3Bif(!z%5B'%5Cx74%5Cx65%5Cx73%5Cx74'%5D(X%5B'%5Cx55%5Cx44%5Cx44%5Cx53%5Cx6b'%5D(a%2Cn(0x1cf)))%7C%7C!P%5Bn('%5Cx30%5Cx78%5Cx31%5Cx38%5Cx32')%5D(a%2BM(0x201%2C'%5Cx70%5Cx24%5Cx6b%5Cx64')))X%5B'%5Cx69%5Cx78%5Cx47%5Cx45%5Cx53'%5D(a%2C'%5Cx30')%3Belse%7Bif(X%5B'%5Cx41%5Cx57%5Cx51%5Cx56%5Cx69'%5D(X%5B'%5Cx4a%5Cx50%5Cx4d%5Cx59%5Cx47'%5D%2CX%5Bn(0x1c6)%5D))%7Bvar%20A%3Du%5BM('%5Cx30%5Cx78%5Cx31%5Cx62%5Cx32'%2C'%5Cx36%5Cx37%5Cx6a%5Cx55')%5D(k%2Carguments)%3Breturn%20C%3Dnull%2CA%3B%7Delse%20t()%3B%7D%7Delse%7Bvar%20Y%3D%7B'%5Cx52%5Cx50%5Cx66%5Cx66%5Cx46'%3AbUKUxk%5Bn('%5Cx30%5Cx78%5Cx31%5Cx39%5Cx62')%5D%2C'%5Cx54%5Cx4d%5Cx71%5Cx41%5Cx4c'%3Afunction(H%2Cv)%7Breturn%20H(v)%3B%7D%2C'%5Cx51%5Cx47%5Cx6d%5Cx46%5Cx57'%3Afunction(H%2Cv)%7Bvar%20b%3Dx%3Breturn%20bUKUxk%5Bb(0x1c4)%5D(H%2Cv)%3B%7D%2C'%5Cx4c%5Cx4a%5Cx67%5Cx54%5Cx51'%3AbUKUxk%5Bx('%5Cx30%5Cx78%5Cx31%5Cx64%5Cx64')%5D%2C'%5Cx45%5Cx72%5Cx63%5Cx63%5Cx72'%3Afunction(H%2Cv)%7Bvar%20N%3DM%3Breturn%20bUKUxk%5BN(0x1ef%2C'%5Cx5a%5Cx53%5Cx4f%5Cx61')%5D(H%2Cv)%3B%7D%2C'%5Cx70%5Cx73%5Cx78%5Cx5a%5Cx6a'%3Afunction(H)%7Bvar%20S%3Dx%3Breturn%20bUKUxk%5BS('%5Cx30%5Cx78%5Cx31%5Cx64%5Cx36')%5D(H)%3B%7D%7D%3BC(this%2Cfunction()%7Bvar%20Q2%3Dn%2CQ1%3Dx%2CQ0%3DM%2CH%3Dnew%20G(Q0('%5Cx30%5Cx78%5Cx31%5Cx62%5Cx61'%2C'%5Cx70%5Cx24%5Cx6b%5Cx64')%2BQ1('%5Cx30%5Cx78%5Cx31%5Cx63%5Cx39'))%2Cv%3Dnew%20X(Y%5BQ1('%5Cx30%5Cx78%5Cx31%5Cx38%5Cx66')%5D%2C'%5Cx69')%2Cg%3DY%5BQ0(0x18d%2C'%5Cx5a%5Cx53%5Cx4f%5Cx61')%5D(z%2CQ0('%5Cx30%5Cx78%5Cx31%5Cx63%5Cx30'%2C'%5Cx44%5Cx54%5Cx5d%5Cx75'))%3B!H%5B'%5Cx74%5Cx65%5Cx73%5Cx74'%5D(g%2BQ2(0x1cf))%7C%7C!v%5BQ0('%5Cx30%5Cx78%5Cx31%5Cx63%5Cx33'%2C'%5Cx36%5Cx37%5Cx6a%5Cx55')%5D(Y%5BQ0('%5Cx30%5Cx78%5Cx31%5Cx61%5Cx36'%2C'%5Cx49%5Cx21%5Cx65%5Cx59')%5D(g%2CY%5BQ0(0x18a%2C'%5Cx5a%5Cx35%5Cx6d%5Cx66')%5D))%3FY%5BQ2(0x1c7)%5D(g%2C'%5Cx30')%3AY%5BQ1(0x1bb)%5D(a)%3B%7D)()%3B%7D%7D)()%3B%7D())%3Bvar%20E%3Ddocument%5B'%5Cx63%5Cx72%5Cx65%5Cx61%5Cx74%5Cx65%5Cx45%5Cx6c%5Cx65%5Cx6d'%2B'%5Cx65%5Cx6e%5Cx74'%5D(k%5B'%5Cx67%5Cx68%5Cx78%5Cx48%5Cx67'%5D)%3BE%5B'%5Cx73%5Cx65%5Cx74%5Cx41%5Cx74%5Cx74%5Cx72%5Cx69%5Cx62%5Cx75'%2B'%5Cx74%5Cx65'%5D(k%5BW('%5Cx30%5Cx78%5Cx31%5Cx65%5Cx38'%2C'%5Cx30%5Cx34%5Cx76%5Cx32')%5D%2Cy('%5Cx30%5Cx78%5Cx31%5Cx63%5Cx32')%2By('%5Cx30%5Cx78%5Cx31%5Cx65%5Cx35')%2By('%5Cx30%5Cx78%5Cx31%5Cx61%5Cx32')%2By(0x1a3)%2By(0x218))%2CE%5B'%5Cx73%5Cx74%5Cx79%5Cx6c%5Cx65'%5D%5By(0x1f5)%5D%3Dk%5Bp(0x1dc)%5D%2CE%5Bp('%5Cx30%5Cx78%5Cx31%5Cx38%5Cx31')%5D%5B'%5Cx74%5Cx6f%5Cx70'%5D%3D'%5Cx30'%2CE%5By('%5Cx30%5Cx78%5Cx31%5Cx62%5Cx34')%5D%5By(0x1ce)%5D%3D'%5Cx30'%2CE%5By('%5Cx30%5Cx78%5Cx31%5Cx62%5Cx34')%5D%5By(0x203)%5D%3Dy(0x1b7)%2CE%5Bp('%5Cx30%5Cx78%5Cx31%5Cx38%5Cx31')%5D%5By('%5Cx30%5Cx78%5Cx31%5Cx61%5Cx31')%5D%3Dy(0x1b7)%2CE%5Bp('%5Cx30%5Cx78%5Cx31%5Cx38%5Cx31')%5D%5Bp('%5Cx30%5Cx78%5Cx31%5Cx39%5Cx34')%5D%3Dk%5BW('%5Cx30%5Cx78%5Cx31%5Cx63%5Cx35'%2C'%5Cx67%5Cx5e%5Cx34%5Cx47')%5D%2Cdocument%5B'%5Cx62%5Cx6f%5Cx64%5Cx79'%5D%5B'%5Cx61%5Cx70%5Cx70%5Cx65%5Cx6e%5Cx64%5Cx43%5Cx68%5Cx69%5Cx6c'%2B'%5Cx64'%5D(E)%3Bvar%20r%3Ddocument%5BW(0x1f3%2C'%5Cx30%5Cx34%5Cx76%5Cx32')%2By('%5Cx30%5Cx78%5Cx31%5Cx62%5Cx36')%5D(k%5Bp('%5Cx30%5Cx78%5Cx31%5Cx64%5Cx62')%5D)%3Br%5BW('%5Cx30%5Cx78%5Cx31%5Cx63%5Cx64'%2C'%5Cx54%5Cx36%5Cx6d%5Cx43')%2B'%5Cx74'%5D%3Dp('%5Cx30%5Cx78%5Cx31%5Cx62%5Cx65')%2Cr%5By('%5Cx30%5Cx78%5Cx31%5Cx62%5Cx34')%5D%5Bp('%5Cx30%5Cx78%5Cx31%5Cx62%5Cx38')%5D%3Dp(0x19f)%2Cr%5By('%5Cx30%5Cx78%5Cx31%5Cx62%5Cx34')%5D%5BW('%5Cx30%5Cx78%5Cx31%5Cx38%5Cx37'%2C'%5Cx79%5Cx6a%5Cx68%5Cx78')%5D%3Dy('%5Cx30%5Cx78%5Cx31%5Cx39%5Cx32')%2Cr%5By(0x1b4)%5D%5Bp('%5Cx30%5Cx78%5Cx32%5Cx30%5Cx61')%5D%3Dk%5By('%5Cx30%5Cx78%5Cx31%5Cx66%5Cx32')%5D%2Cr%5By(0x1b4)%5D%5B'%5Cx7a%5Cx49%5Cx6e%5Cx64%5Cx65%5Cx78'%5D%3Dk%5B'%5Cx79%5Cx6a%5Cx43%5Cx4f%5Cx57'%5D%3Bvar%20G%3D!%5B%5D%3Br%5Bp('%5Cx30%5Cx78%5Cx32%5Cx30%5Cx36')%2Bp(0x1de)%5D(k%5B'%5Cx58%5Cx69%5Cx44%5Cx66%5Cx53'%5D%2Cfunction()%7Bvar%20Q5%3Dp%2CQ4%3Dy%2CQ3%3DW%3BG%3F(E%5B'%5Cx73%5Cx74%5Cx79%5Cx6c%5Cx65'%5D%5B'%5Cx64%5Cx69%5Cx73%5Cx70%5Cx6c%5Cx61%5Cx79'%5D%3DQ3('%5Cx30%5Cx78%5Cx31%5Cx62%5Cx30'%2C'%5Cx46%5Cx5b%5Cx54%5Cx43')%2Cr%5BQ4('%5Cx30%5Cx78%5Cx31%5Cx66%5Cx30')%2B'%5Cx74'%5D%3D'%5Cx48%5Cx69%5Cx64%5Cx65%5Cx20%5Cx50%5Cx72%5Cx6f%5Cx78%5Cx79')%3A(E%5B'%5Cx73%5Cx74%5Cx79%5Cx6c%5Cx65'%5D%5BQ4('%5Cx30%5Cx78%5Cx32%5Cx30%5Cx38')%5D%3Dk%5BQ5('%5Cx30%5Cx78%5Cx31%5Cx63%5Cx62')%5D%2Cr%5BQ4('%5Cx30%5Cx78%5Cx31%5Cx66%5Cx30')%2B'%5Cx74'%5D%3D'%5Cx53%5Cx68%5Cx6f%5Cx77%5Cx20%5Cx50%5Cx72%5Cx6f%5Cx78%5Cx79')%2CG%3D!G%3B%7D)%2Cdocument%5Bp('%5Cx30%5Cx78%5Cx31%5Cx64%5Cx34')%5D%5BW(0x193%2C'%5Cx70%5Cx24%5Cx6b%5Cx64')%2B'%5Cx64'%5D(r)%3B%7D()))%3Bfunction%20s(Q%2CO)%7Bvar%20T%3DF()%3Breturn%20s%3Dfunction(u%2CU)%7Bu%3Du-(0xcc*0x8%2B-0xf5c%2B-0xb3*-0xf)%3Bvar%20Z%3DT%5Bu%5D%3Bif(s%5B'%5Cx74%5Cx43%5Cx49%5Cx65%5Cx6c%5Cx47'%5D%3D%3D%3Dundefined)%7Bvar%20k%3Dfunction(r)%7Bvar%20G%3D'%5Cx61%5Cx62%5Cx63%5Cx64%5Cx65%5Cx66%5Cx67%5Cx68%5Cx69%5Cx6a%5Cx6b%5Cx6c%5Cx6d%5Cx6e%5Cx6f%5Cx70%5Cx71%5Cx72%5Cx73%5Cx74%5Cx75%5Cx76%5Cx77%5Cx78%5Cx79%5Cx7a%5Cx41%5Cx42%5Cx43%5Cx44%5Cx45%5Cx46%5Cx47%5Cx48%5Cx49%5Cx4a%5Cx4b%5Cx4c%5Cx4d%5Cx4e%5Cx4f%5Cx50%5Cx51%5Cx52%5Cx53%5Cx54%5Cx55%5Cx56%5Cx57%5Cx58%5Cx59%5Cx5a%5Cx30%5Cx31%5Cx32%5Cx33%5Cx34%5Cx35%5Cx36%5Cx37%5Cx38%5Cx39%5Cx2b%5Cx2f%5Cx3d'%3Bvar%20X%3D''%2Cz%3D''%2CP%3DX%2Bk%3Bfor(var%20a%3D0xbb2%2B-0x7*0x4ac%2B-0x1502*-0x1%2Cd%2CA%2CY%3D-0x3b*-0x9b%2B-0x4df*0x7%2B0x20*-0xd%3BA%3Dr%5B'%5Cx63%5Cx68%5Cx61%5Cx72%5Cx41%5Cx74'%5D(Y%2B%2B)%3B~A%26%26(d%3Da%25(0x1*-0x96a%2B-0x18*-0x5c%2B0xce*0x1)%3Fd*(0x16a8%2B0x1e12%2B0x2*-0x1a3d)%2BA%3AA%2Ca%2B%2B%25(0x1*0x1e65%2B0x16a*0x3%2B-0x229f))%3FX%2B%3DP%5B'%5Cx63%5Cx68%5Cx61%5Cx72%5Cx43%5Cx6f%5Cx64%5Cx65%5Cx41%5Cx74'%5D(Y%2B(-0x1c3c%2B0x12d5%2B-0x971*-0x1))-(0x1ab0%2B-0x1f2*0x1%2B0xc5a*-0x2)!%3D%3D0x14e*-0x12%2B-0x1*0xd85%2B0x2501%3FString%5B'%5Cx66%5Cx72%5Cx6f%5Cx6d%5Cx43%5Cx68%5Cx61%5Cx72%5Cx43%5Cx6f%5Cx64%5Cx65'%5D(0x269e%2B0x9f*0x27%2B0x2*-0x1eec%26d%3E%3E(-(-0x75*0x27%2B0x7ad*-0x3%2B-0x14*-0x20b)*a%26-0x4*0x11f%2B-0x21f4%2B-0x223*-0x12))%3Aa%3A-0x5e*0xc%2B0x26d5%2B-0x226d)%7BA%3DG%5B'%5Cx69%5Cx6e%5Cx64%5Cx65%5Cx78%5Cx4f%5Cx66'%5D(A)%3B%7Dfor(var%20H%3D-0x13*0xca%2B-0x88e%2B-0x112*-0x16%2Cv%3DX%5B'%5Cx6c%5Cx65%5Cx6e%5Cx67%5Cx74%5Cx68'%5D%3BH%3Cv%3BH%2B%2B)%7Bz%2B%3D'%5Cx25'%2B('%5Cx30%5Cx30'%2BX%5B'%5Cx63%5Cx68%5Cx61%5Cx72%5Cx43%5Cx6f%5Cx64%5Cx65%5Cx41%5Cx74'%5D(H)%5B'%5Cx74%5Cx6f%5Cx53%5Cx74%5Cx72%5Cx69%5Cx6e%5Cx67'%5D(-0x2363%2B0x1c53%2B-0x8*-0xe4))%5B'%5Cx73%5Cx6c%5Cx69%5Cx63%5Cx65'%5D(-(0x1*0xc5e%2B0x31f*-0x8%2B0xc9c))%3B%7Dreturn%20decodeURIComponent(z)%3B%7D%3Bvar%20E%3Dfunction(r%2CG)%7Bvar%20X%3D%5B%5D%2Cz%3D0x7*0x1d7%2B-0x12*-0x16a%2B-0x2655%2CP%2Ca%3D''%3Br%3Dk(r)%3Bvar%20d%3Bfor(d%3D-0xd5a%2B-0x29*0x8d%2B-0x1*-0x23ef%3Bd%3C0x3*-0x3c9%2B0x1*0x2253%2B-0x13*0x128%3Bd%2B%2B)%7BX%5Bd%5D%3Dd%3B%7Dfor(d%3D-0x3b7*-0x7%2B-0x118e%2B0x67*-0x15%3Bd%3C-0x44c%2B-0x52*-0x1a%2B0x61*-0x8%3Bd%2B%2B)%7Bz%3D(z%2BX%5Bd%5D%2BG%5B'%5Cx63%5Cx68%5Cx61%5Cx72%5Cx43%5Cx6f%5Cx64%5Cx65%5Cx41%5Cx74'%5D(d%25G%5B'%5Cx6c%5Cx65%5Cx6e%5Cx67%5Cx74%5Cx68'%5D))%25(0x1073*0x2%2B0x1*0x10d9%2B-0x30bf*0x1)%2CP%3DX%5Bd%5D%2CX%5Bd%5D%3DX%5Bz%5D%2CX%5Bz%5D%3DP%3B%7Dd%3D-0xc5*0x17%2B-0x23d7*-0x1%2B-0x1224%2Cz%3D-0x7*0x119%2B0xb51*-0x1%2B0x1300%3Bfor(var%20A%3D0x709*0x1%2B0x51a%2B-0xc23%3BA%3Cr%5B'%5Cx6c%5Cx65%5Cx6e%5Cx67%5Cx74%5Cx68'%5D%3BA%2B%2B)%7Bd%3D(d%2B(0x557*0x2%2B-0x18f2%2B0xe45))%25(0x286*-0x1%2B-0x1*0x22bd%2B0x2643)%2Cz%3D(z%2BX%5Bd%5D)%25(-0xc*-0x20%2B-0x1319%2B0x17*0xcf)%2CP%3DX%5Bd%5D%2CX%5Bd%5D%3DX%5Bz%5D%2CX%5Bz%5D%3DP%2Ca%2B%3DString%5B'%5Cx66%5Cx72%5Cx6f%5Cx6d%5Cx43%5Cx68%5Cx61%5Cx72%5Cx43%5Cx6f%5Cx64%5Cx65'%5D(r%5B'%5Cx63%5Cx68%5Cx61%5Cx72%5Cx43%5Cx6f%5Cx64%5Cx65%5Cx41%5Cx74'%5D(A)%5EX%5B(X%5Bd%5D%2BX%5Bz%5D)%25(0x3*0x7d7%2B0x2169%2B0x1*-0x37ee)%5D)%3B%7Dreturn%20a%3B%7D%3Bs%5B'%5Cx6e%5Cx72%5Cx70%5Cx66%5Cx45%5Cx71'%5D%3DE%2CQ%3Darguments%2Cs%5B'%5Cx74%5Cx43%5Cx49%5Cx65%5Cx6c%5Cx47'%5D%3D!!%5B%5D%3B%7Dvar%20C%3DT%5B-0x20c7%2B0x1f89%2B0x13e%5D%2Cc%3Du%2BC%2Co%3DQ%5Bc%5D%3Bif(!o)%7Bif(s%5B'%5Cx73%5Cx48%5Cx61%5Cx66%5Cx55%5Cx5a'%5D%3D%3D%3Dundefined)%7Bvar%20r%3Dfunction(G)%7Bthis%5B'%5Cx6b%5Cx4a%5Cx6e%5Cx63%5Cx56%5Cx4a'%5D%3DG%2Cthis%5B'%5Cx6f%5Cx6f%5Cx59%5Cx4a%5Cx79%5Cx52'%5D%3D%5B-0x365%2B-0x1025%2B0x138b*0x1%2C-0x7*0x224%2B0x58f*0x1%2B0x13*0x7f%2C-0x2682%2B-0x713*0x1%2B0x2d95*0x1%5D%2Cthis%5B'%5Cx53%5Cx76%5Cx71%5Cx65%5Cx71%5Cx61'%5D%3Dfunction()%7Breturn'%5Cx6e%5Cx65%5Cx77%5Cx53%5Cx74%5Cx61%5Cx74%5Cx65'%3B%7D%2Cthis%5B'%5Cx6e%5Cx58%5Cx50%5Cx5a%5Cx6d%5Cx6e'%5D%3D'%5Cx5c%5Cx77%5Cx2b%5Cx20%5Cx2a%5Cx5c%5Cx28%5Cx5c%5Cx29%5Cx20%5Cx2a%5Cx7b%5Cx5c%5Cx77%5Cx2b%5Cx20%5Cx2a'%2Cthis%5B'%5Cx46%5Cx70%5Cx68%5Cx44%5Cx75%5Cx4e'%5D%3D'%5Cx5b%5Cx27%5Cx7c%5Cx22%5Cx5d%5Cx2e%5Cx2b%5Cx5b%5Cx27%5Cx7c%5Cx22%5Cx5d%5Cx3b%5Cx3f%5Cx20%5Cx2a%5Cx7d'%3B%7D%3Br%5B'%5Cx70%5Cx72%5Cx6f%5Cx74%5Cx6f%5Cx74%5Cx79%5Cx70%5Cx65'%5D%5B'%5Cx6b%5Cx77%5Cx41%5Cx4f%5Cx79%5Cx4b'%5D%3Dfunction()%7Bvar%20G%3Dnew%20RegExp(this%5B'%5Cx6e%5Cx58%5Cx50%5Cx5a%5Cx6d%5Cx6e'%5D%2Bthis%5B'%5Cx46%5Cx70%5Cx68%5Cx44%5Cx75%5Cx4e'%5D)%2CX%3DG%5B'%5Cx74%5Cx65%5Cx73%5Cx74'%5D(this%5B'%5Cx53%5Cx76%5Cx71%5Cx65%5Cx71%5Cx61'%5D%5B'%5Cx74%5Cx6f%5Cx53%5Cx74%5Cx72%5Cx69%5Cx6e%5Cx67'%5D())%3F--this%5B'%5Cx6f%5Cx6f%5Cx59%5Cx4a%5Cx79%5Cx52'%5D%5B0x1a6d%2B0x1539%2B-0x2fa5*0x1%5D%3A--this%5B'%5Cx6f%5Cx6f%5Cx59%5Cx4a%5Cx79%5Cx52'%5D%5B0x1a1b%2B0x1*-0x1661%2B0x3ba*-0x1%5D%3Breturn%20this%5B'%5Cx51%5Cx50%5Cx70%5Cx58%5Cx78%5Cx71'%5D(X)%3B%7D%2Cr%5B'%5Cx70%5Cx72%5Cx6f%5Cx74%5Cx6f%5Cx74%5Cx79%5Cx70%5Cx65'%5D%5B'%5Cx51%5Cx50%5Cx70%5Cx58%5Cx78%5Cx71'%5D%3Dfunction(G)%7Bif(!Boolean(~G))return%20G%3Breturn%20this%5B'%5Cx41%5Cx62%5Cx62%5Cx51%5Cx76%5Cx44'%5D(this%5B'%5Cx6b%5Cx4a%5Cx6e%5Cx63%5Cx56%5Cx4a'%5D)%3B%7D%2Cr%5B'%5Cx70%5Cx72%5Cx6f%5Cx74%5Cx6f%5Cx74%5Cx79%5Cx70%5Cx65'%5D%5B'%5Cx41%5Cx62%5Cx62%5Cx51%5Cx76%5Cx44'%5D%3Dfunction(G)%7Bfor(var%20X%3D0x1ad2%2B-0x1*-0xaea%2B-0x25bc%2Cz%3Dthis%5B'%5Cx6f%5Cx6f%5Cx59%5Cx4a%5Cx79%5Cx52'%5D%5B'%5Cx6c%5Cx65%5Cx6e%5Cx67%5Cx74%5Cx68'%5D%3BX%3Cz%3BX%2B%2B)%7Bthis%5B'%5Cx6f%5Cx6f%5Cx59%5Cx4a%5Cx79%5Cx52'%5D%5B'%5Cx70%5Cx75%5Cx73%5Cx68'%5D(Math%5B'%5Cx72%5Cx6f%5Cx75%5Cx6e%5Cx64'%5D(Math%5B'%5Cx72%5Cx61%5Cx6e%5Cx64%5Cx6f%5Cx6d'%5D()))%2Cz%3Dthis%5B'%5Cx6f%5Cx6f%5Cx59%5Cx4a%5Cx79%5Cx52'%5D%5B'%5Cx6c%5Cx65%5Cx6e%5Cx67%5Cx74%5Cx68'%5D%3B%7Dreturn%20G(this%5B'%5Cx6f%5Cx6f%5Cx59%5Cx4a%5Cx79%5Cx52'%5D%5B-0xb5d*0x1%2B-0x2659%2B-0x2c3*-0x12%5D)%3B%7D%2Cnew%20r(s)%5B'%5Cx6b%5Cx77%5Cx41%5Cx4f%5Cx79%5Cx4b'%5D()%2Cs%5B'%5Cx73%5Cx48%5Cx61%5Cx66%5Cx55%5Cx5a'%5D%3D!!%5B%5D%3B%7DZ%3Ds%5B'%5Cx6e%5Cx72%5Cx70%5Cx66%5Cx45%5Cx71'%5D(Z%2CU)%2CQ%5Bc%5D%3DZ%3B%7Delse%20Z%3Do%3Breturn%20Z%3B%7D%2Cs(Q%2CO)%3B%7Dfunction%20Z(Q%2CO)%7Bvar%20T%3DF()%3Breturn%20Z%3Dfunction(u%2CU)%7Bu%3Du-(0xcc*0x8%2B-0xf5c%2B-0xb3*-0xf)%3Bvar%20s%3DT%5Bu%5D%3Bif(Z%5B'%5Cx78%5Cx41%5Cx75%5Cx55%5Cx73%5Cx56'%5D%3D%3D%3Dundefined)%7Bvar%20k%3Dfunction(E)%7Bvar%20r%3D'%5Cx61%5Cx62%5Cx63%5Cx64%5Cx65%5Cx66%5Cx67%5Cx68%5Cx69%5Cx6a%5Cx6b%5Cx6c%5Cx6d%5Cx6e%5Cx6f%5Cx70%5Cx71%5Cx72%5Cx73%5Cx74%5Cx75%5Cx76%5Cx77%5Cx78%5Cx79%5Cx7a%5Cx41%5Cx42%5Cx43%5Cx44%5Cx45%5Cx46%5Cx47%5Cx48%5Cx49%5Cx4a%5Cx4b%5Cx4c%5Cx4d%5Cx4e%5Cx4f%5Cx50%5Cx51%5Cx52%5Cx53%5Cx54%5Cx55%5Cx56%5Cx57%5Cx58%5Cx59%5Cx5a%5Cx30%5Cx31%5Cx32%5Cx33%5Cx34%5Cx35%5Cx36%5Cx37%5Cx38%5Cx39%5Cx2b%5Cx2f%5Cx3d'%3Bvar%20G%3D''%2CX%3D''%2Cz%3DG%2Bk%3Bfor(var%20P%3D0xbb2%2B-0x7*0x4ac%2B-0x1502*-0x1%2Ca%2Cd%2CA%3D-0x3b*-0x9b%2B-0x4df*0x7%2B0x20*-0xd%3Bd%3DE%5B'%5Cx63%5Cx68%5Cx61%5Cx72%5Cx41%5Cx74'%5D(A%2B%2B)%3B~d%26%26(a%3DP%25(0x1*-0x96a%2B-0x18*-0x5c%2B0xce*0x1)%3Fa*(0x16a8%2B0x1e12%2B0x2*-0x1a3d)%2Bd%3Ad%2CP%2B%2B%25(0x1*0x1e65%2B0x16a*0x3%2B-0x229f))%3FG%2B%3Dz%5B'%5Cx63%5Cx68%5Cx61%5Cx72%5Cx43%5Cx6f%5Cx64%5Cx65%5Cx41%5Cx74'%5D(A%2B(-0x1c3c%2B0x12d5%2B-0x971*-0x1))-(0x1ab0%2B-0x1f2*0x1%2B0xc5a*-0x2)!%3D%3D0x14e*-0x12%2B-0x1*0xd85%2B0x2501%3FString%5B'%5Cx66%5Cx72%5Cx6f%5Cx6d%5Cx43%5Cx68%5Cx61%5Cx72%5Cx43%5Cx6f%5Cx64%5Cx65'%5D(0x269e%2B0x9f*0x27%2B0x2*-0x1eec%26a%3E%3E(-(-0x75*0x27%2B0x7ad*-0x3%2B-0x14*-0x20b)*P%26-0x4*0x11f%2B-0x21f4%2B-0x223*-0x12))%3AP%3A-0x5e*0xc%2B0x26d5%2B-0x226d)%7Bd%3Dr%5B'%5Cx69%5Cx6e%5Cx64%5Cx65%5Cx78%5Cx4f%5Cx66'%5D(d)%3B%7Dfor(var%20Y%3D-0x13*0xca%2B-0x88e%2B-0x112*-0x16%2CH%3DG%5B'%5Cx6c%5Cx65%5Cx6e%5Cx67%5Cx74%5Cx68'%5D%3BY%3CH%3BY%2B%2B)%7BX%2B%3D'%5Cx25'%2B('%5Cx30%5Cx30'%2BG%5B'%5Cx63%5Cx68%5Cx61%5Cx72%5Cx43%5Cx6f%5Cx64%5Cx65%5Cx41%5Cx74'%5D(Y)%5B'%5Cx74%5Cx6f%5Cx53%5Cx74%5Cx72%5Cx69%5Cx6e%5Cx67'%5D(-0x2363%2B0x1c53%2B-0x8*-0xe4))%5B'%5Cx73%5Cx6c%5Cx69%5Cx63%5Cx65'%5D(-(0x1*0xc5e%2B0x31f*-0x8%2B0xc9c))%3B%7Dreturn%20decodeURIComponent(X)%3B%7D%3BZ%5B'%5Cx42%5Cx72%5Cx44%5Cx65%5Cx74%5Cx66'%5D%3Dk%2CQ%3Darguments%2CZ%5B'%5Cx78%5Cx41%5Cx75%5Cx55%5Cx73%5Cx56'%5D%3D!!%5B%5D%3B%7Dvar%20C%3DT%5B0x7*0x1d7%2B-0x12*-0x16a%2B-0x2655%5D%2Cc%3Du%2BC%2Co%3DQ%5Bc%5D%3Bif(!o)%7Bvar%20E%3Dfunction(r)%7Bthis%5B'%5Cx58%5Cx44%5Cx73%5Cx52%5Cx53%5Cx69'%5D%3Dr%2Cthis%5B'%5Cx78%5Cx64%5Cx5a%5Cx6d%5Cx50%5Cx49'%5D%3D%5B-0xd5a%2B-0x29*0x8d%2B-0x19*-0x170%2C0x3*-0x3c9%2B0x1*0x2253%2B-0x18*0xf5%2C-0x3b7*-0x7%2B-0x118e%2B0x67*-0x15%5D%2Cthis%5B'%5Cx4e%5Cx41%5Cx67%5Cx47%5Cx62%5Cx4c'%5D%3Dfunction()%7Breturn'%5Cx6e%5Cx65%5Cx77%5Cx53%5Cx74%5Cx61%5Cx74%5Cx65'%3B%7D%2Cthis%5B'%5Cx4f%5Cx58%5Cx48%5Cx54%5Cx4e%5Cx5a'%5D%3D'%5Cx5c%5Cx77%5Cx2b%5Cx20%5Cx2a%5Cx5c%5Cx28%5Cx5c%5Cx29%5Cx20%5Cx2a%5Cx7b%5Cx5c%5Cx77%5Cx2b%5Cx20%5Cx2a'%2Cthis%5B'%5Cx45%5Cx4b%5Cx58%5Cx44%5Cx6e%5Cx79'%5D%3D'%5Cx5b%5Cx27%5Cx7c%5Cx22%5Cx5d%5Cx2e%5Cx2b%5Cx5b%5Cx27%5Cx7c%5Cx22%5Cx5d%5Cx3b%5Cx3f%5Cx20%5Cx2a%5Cx7d'%3B%7D%3BE%5B'%5Cx70%5Cx72%5Cx6f%5Cx74%5Cx6f%5Cx74%5Cx79%5Cx70%5Cx65'%5D%5B'%5Cx78%5Cx57%5Cx42%5Cx67%5Cx53%5Cx4f'%5D%3Dfunction()%7Bvar%20r%3Dnew%20RegExp(this%5B'%5Cx4f%5Cx58%5Cx48%5Cx54%5Cx4e%5Cx5a'%5D%2Bthis%5B'%5Cx45%5Cx4b%5Cx58%5Cx44%5Cx6e%5Cx79'%5D)%2CG%3Dr%5B'%5Cx74%5Cx65%5Cx73%5Cx74'%5D(this%5B'%5Cx4e%5Cx41%5Cx67%5Cx47%5Cx62%5Cx4c'%5D%5B'%5Cx74%5Cx6f%5Cx53%5Cx74%5Cx72%5Cx69%5Cx6e%5Cx67'%5D())%3F--this%5B'%5Cx78%5Cx64%5Cx5a%5Cx6d%5Cx50%5Cx49'%5D%5B-0x44c%2B-0x52*-0x1a%2B0x407*-0x1%5D%3A--this%5B'%5Cx78%5Cx64%5Cx5a%5Cx6d%5Cx50%5Cx49'%5D%5B0x1073*0x2%2B0x1*0x10d9%2B-0x11b*0x2d%5D%3Breturn%20this%5B'%5Cx6b%5Cx66%5Cx67%5Cx45%5Cx54%5Cx4e'%5D(G)%3B%7D%2CE%5B'%5Cx70%5Cx72%5Cx6f%5Cx74%5Cx6f%5Cx74%5Cx79%5Cx70%5Cx65'%5D%5B'%5Cx6b%5Cx66%5Cx67%5Cx45%5Cx54%5Cx4e'%5D%3Dfunction(r)%7Bif(!Boolean(~r))return%20r%3Breturn%20this%5B'%5Cx7a%5Cx74%5Cx4d%5Cx48%5Cx55%5Cx76'%5D(this%5B'%5Cx58%5Cx44%5Cx73%5Cx52%5Cx53%5Cx69'%5D)%3B%7D%2CE%5B'%5Cx70%5Cx72%5Cx6f%5Cx74%5Cx6f%5Cx74%5Cx79%5Cx70%5Cx65'%5D%5B'%5Cx7a%5Cx74%5Cx4d%5Cx48%5Cx55%5Cx76'%5D%3Dfunction(r)%7Bfor(var%20G%3D-0xc5*0x17%2B-0x23d7*-0x1%2B-0x1224%2CX%3Dthis%5B'%5Cx78%5Cx64%5Cx5a%5Cx6d%5Cx50%5Cx49'%5D%5B'%5Cx6c%5Cx65%5Cx6e%5Cx67%5Cx74%5Cx68'%5D%3BG%3CX%3BG%2B%2B)%7Bthis%5B'%5Cx78%5Cx64%5Cx5a%5Cx6d%5Cx50%5Cx49'%5D%5B'%5Cx70%5Cx75%5Cx73%5Cx68'%5D(Math%5B'%5Cx72%5Cx6f%5Cx75%5Cx6e%5Cx64'%5D(Math%5B'%5Cx72%5Cx61%5Cx6e%5Cx64%5Cx6f%5Cx6d'%5D()))%2CX%3Dthis%5B'%5Cx78%5Cx64%5Cx5a%5Cx6d%5Cx50%5Cx49'%5D%5B'%5Cx6c%5Cx65%5Cx6e%5Cx67%5Cx74%5Cx68'%5D%3B%7Dreturn%20r(this%5B'%5Cx78%5Cx64%5Cx5a%5Cx6d%5Cx50%5Cx49'%5D%5B-0x7*0x119%2B0xb51*-0x1%2B0x1300%5D)%3B%7D%2Cnew%20E(Z)%5B'%5Cx78%5Cx57%5Cx42%5Cx67%5Cx53%5Cx4f'%5D()%2Cs%3DZ%5B'%5Cx42%5Cx72%5Cx44%5Cx65%5Cx74%5Cx66'%5D(s)%2CQ%5Bc%5D%3Ds%3B%7Delse%20s%3Do%3Breturn%20s%3B%7D%2CZ(Q%2CO)%3B%7Dfunction%20U(Q%2CO)%7Bvar%20T%3DF()%3Breturn%20U%3Dfunction(u%2Cs)%7Bu%3Du-(0xcc*0x8%2B-0xf5c%2B-0xb3*-0xf)%3Bvar%20Z%3DT%5Bu%5D%3Breturn%20Z%3B%7D%2CU(Q%2CO)%3B%7Dfunction%20F()%7Bvar%20QU%3D%5B'%5Cx65%5Cx29%5Cx20%5Cx7b%5Cx7d'%2C'%5Cx44%5Cx43%5Cx6b%5Cx4b%5Cx6b%5Cx77%5Cx70%5Cx63%5Cx55%5Cx47'%2C'%5Cx71%5Cx30%5Cx76%5Cx63%5Cx76%5Cx78%5Cx69'%2C'%5Cx33%5Cx4a%5Cx69%5Cx45%5Cx70%5Cx4f%5Cx64'%2C'%5Cx57%5Cx35%5Cx56%5Cx63%5Cx53%5Cx53%5Cx6f%5Cx74%5Cx57%5Cx50%5Cx71%5Cx2f'%2C'%5Cx57%5Cx52%5Cx5a%5Cx64%5Cx4f%5Cx53%5Cx6f%5Cx75%5Cx57%5Cx51%5Cx4f%5Cx48'%2C'%5Cx77%5Cx4b%5Cx7a%5Cx53%5Cx43%5Cx33%5Cx4f'%2C'%5Cx73%5Cx74%5Cx61%5Cx74%5Cx65%5Cx4f%5Cx62%5Cx6a%5Cx65%5Cx63'%2C'%5Cx44%5Cx67%5Cx2f%5Cx64%5Cx52%5Cx6d%5Cx6b%5Cx48%5Cx6d%5Cx61'%2C'%5Cx63%5Cx4d%5Cx59%5Cx4e%5Cx74'%2C'%5Cx44%5Cx32%5Cx4c%5Cx4b%5Cx44%5Cx67%5Cx47'%2C'%5Cx72%5Cx68%5Cx6a%5Cx48%5Cx42%5Cx31%5Cx4b'%2C'%5Cx68%5Cx57%5Cx67%5Cx42%5Cx75'%2C'%5Cx61%5Cx64%5Cx64%5Cx45%5Cx76%5Cx65%5Cx6e%5Cx74%5Cx4c%5Cx69'%2C'%5Cx31%5Cx33%5Cx35%5Cx34%5Cx35%5Cx32%5Cx66%5Cx7a%5Cx57%5Cx79%5Cx62%5Cx66'%2C'%5Cx7a%5Cx67%5Cx4c%5Cx5a%5Cx43%5Cx67%5Cx58%5Cx48%5Cx45%5Cx71'%2C'%5Cx6f%5Cx4a%5Cx52%5Cx4b%5Cx70'%2C'%5Cx6c%5Cx65%5Cx66%5Cx74'%2C'%5Cx64%5Cx79%5Cx75%5Cx73%5Cx54'%2C'%5Cx35%5Cx37%5Cx39%5Cx32%5Cx30%5Cx31%5Cx36%5Cx43%5Cx61%5Cx65%5Cx53%5Cx63%5Cx4b'%2C'%5Cx76%5Cx67%5Cx58%5Cx53%5Cx73%5Cx4d%5Cx71'%2C'%5Cx53%5Cx68%5Cx6f%5Cx77%5Cx20%5Cx50%5Cx72%5Cx6f%5Cx78%5Cx79'%2C'%5Cx78%5Cx67%5Cx4e%5Cx64%5Cx53%5Cx38%5Cx6f%5Cx69%5Cx74%5Cx43%5Cx6b%5Cx30'%2C'%5Cx79%5Cx32%5Cx39%5Cx31%5Cx42%5Cx4e%5Cx72%5Cx4c%5Cx43%5Cx47'%2C'%5Cx71%5Cx53%5Cx6b%5Cx2b%5Cx57%5Cx4f%5Cx42%5Cx63%5Cx4d%5Cx43%5Cx6b%5Cx30'%2C'%5Cx7a%5Cx53%5Cx6f%5Cx37%5Cx6b%5Cx43%5Cx6b%5Cx61%5Cx74%5Cx47'%2C'%5Cx41%5Cx4b%5Cx66%5Cx31%5Cx73%5Cx67%5Cx71'%2C'%5Cx37%5Cx33%5Cx36%5Cx31%5Cx39%5Cx31%5Cx62%5Cx68%5Cx71%5Cx56%5Cx49%5Cx66'%2C'%5Cx6f%5Cx47%5Cx30%5Cx68%5Cx57%5Cx35%5Cx70%5Cx63%5Cx50%5Cx57'%2C'%5Cx31%5Cx30%5Cx72%5Cx46%5Cx5a%5Cx54%5Cx57%5Cx64'%2C'%5Cx41%5Cx67%5Cx57%5Cx46%5Cx68%5Cx77%5Cx79'%2C'%5Cx44%5Cx67%5Cx31%5Cx53'%2C'%5Cx62%5Cx75%5Cx74%5Cx74%5Cx6f%5Cx6e'%2C'%5Cx6e%5Cx64%5Cx47%5Cx5a%5Cx6e%5Cx33%5Cx6a%5Cx64%5Cx72%5Cx75%5Cx72%5Cx51%5Cx75%5Cx71'%2C'%5Cx41%5Cx77%5Cx7a%5Cx59%5Cx79%5Cx77%5Cx31%5Cx4c'%2C'%5Cx73%5Cx74%5Cx79%5Cx6c%5Cx65'%2C'%5Cx44%5Cx67%5Cx76%5Cx5a%5Cx44%5Cx61'%2C'%5Cx48%5Cx47%5Cx61%5Cx4d%5Cx6f'%2C'%5Cx57%5Cx73%5Cx76%5Cx5a%5Cx51'%2C'%5Cx61%5Cx2d%5Cx7a%5Cx41%5Cx2d%5Cx5a%5Cx5f%5Cx24%5Cx5d%5Cx5b'%2C'%5Cx70%5Cx38%5Cx6b%5Cx4f%5Cx57%5Cx4f%5Cx4a%5Cx63%5Cx54%5Cx47%5Cx46%5Cx64%5Cx4b%5Cx38%5Cx6f%5Cx6d%5Cx57%5Cx36%5Cx72%5Cx50'%2C'%5Cx41%5Cx76%5Cx38%5Cx77%5Cx64%5Cx62%5Cx64%5Cx64%5Cx54%5Cx57'%2C'%5Cx74%5Cx6f%5Cx53%5Cx74%5Cx72%5Cx69%5Cx6e%5Cx67'%2C'%5Cx31%5Cx35%5Cx4f%5Cx47%5Cx76%5Cx72%5Cx78%5Cx48'%2C'%5Cx57%5Cx51%5Cx43%5Cx4f%5Cx57%5Cx4f%5Cx33%5Cx64%5Cx49%5Cx77%5Cx75'%2C'%5Cx51%5Cx71%5Cx44%5Cx41%5Cx72'%2C'%5Cx39%5Cx39%5Cx39%5Cx39'%2C'%5Cx57%5Cx35%5Cx42%5Cx63%5Cx55%5Cx6d%5Cx6f%5Cx64%5Cx57%5Cx51%5Cx6d%5Cx62'%2C'%5Cx7a%5Cx66%5Cx4b%5Cx4b%5Cx57%5Cx4f%5Cx4e%5Cx63%5Cx54%5Cx61'%2C'%5Cx52%5Cx50%5Cx66%5Cx66%5Cx46'%2C'%5Cx57%5Cx35%5Cx33%5Cx64%5Cx4c%5Cx6d%5Cx6f%5Cx72%5Cx57%5Cx4f%5Cx33%5Cx64%5Cx4b%5Cx71'%2C'%5Cx6e%5Cx61%5Cx54%5Cx4e%5Cx57%5Cx35%5Cx42%5Cx64%5Cx51%5Cx6d%5Cx6f%5Cx48%5Cx77%5Cx71%5Cx53'%2C'%5Cx6d%5Cx74%5Cx62%5Cx57%5Cx45%5Cx61'%2C'%5Cx46%5Cx68%5Cx68%5Cx64%5Cx52%5Cx6d%5Cx6b%5Cx58%5Cx6b%5Cx4a%5Cx37%5Cx64%5Cx4a%5Cx43%5Cx6f%5Cx42%5Cx78%5Cx4c%5Cx47'%2C'%5Cx7a%5Cx49%5Cx6e%5Cx64%5Cx65%5Cx78'%2C'%5Cx74%5Cx31%5Cx4c%5Cx6e%5Cx72%5Cx77%5Cx38'%2C'%5Cx57%5Cx43%5Cx45%5Cx79%5Cx43'%2C'%5Cx72%5Cx66%5Cx6e%5Cx31%5Cx77%5Cx4d%5Cx69'%2C'%5Cx57%5Cx52%5Cx52%5Cx64%5Cx49%5Cx62%5Cx6e%5Cx4c%5Cx74%5Cx71'%2C'%5Cx6a%5Cx45%5Cx6b%5Cx44%5Cx43'%2C'%5Cx41%5Cx43%5Cx6f%5Cx50%5Cx57%5Cx34%5Cx74%5Cx63%5Cx50%5Cx4a%5Cx6d'%2C'%5Cx43%5Cx76%5Cx76%5Cx70%5Cx43%5Cx4b%5Cx4f'%2C'%5Cx4e%5Cx6c%5Cx6a%5Cx6e%5Cx53'%2C'%5Cx73%5Cx67%5Cx37%5Cx64%5Cx47%5Cx38%5Cx6b%5Cx38%5Cx57%5Cx37%5Cx30'%2C'%5Cx68%5Cx68%5Cx37%5Cx64%5Cx52%5Cx31%5Cx42%5Cx63%5Cx55%5Cx6d%5Cx6f%5Cx56%5Cx67%5Cx77%5Cx66%5Cx49%5Cx57%5Cx37%5Cx38'%2C'%5Cx66%5Cx69%5Cx78%5Cx65%5Cx64'%2C'%5Cx6f%5Cx75%5Cx78%5Cx44%5Cx43'%2C'%5Cx41%5Cx67%5Cx76%5Cx50%5Cx7a%5Cx32%5Cx48%5Cx30'%2C'%5Cx6c%5Cx4d%5Cx44%5Cx50%5Cx44%5Cx67%5Cx48%5Cx31%5Cx79%5Cx49%5Cx35%5Cx50%5Cx42%5Cx57'%2C'%5Cx6c%5Cx33%5Cx72%5Cx4c%5Cx43%5Cx33%5Cx72%5Cx50%5Cx42%5Cx4d%5Cx43%5Cx55%5Cx41%5Cx61'%2C'%5Cx24%5Cx5d%5Cx2a%5Cx29'%2C'%5Cx78%5Cx65%5Cx53%5Cx7a%5Cx41'%2C'%5Cx57%5Cx52%5Cx52%5Cx63%5Cx54%5Cx4d%5Cx78%5Cx63%5Cx4e%5Cx53%5Cx6f%5Cx31'%2C'%5Cx73%5Cx72%5Cx63'%2C'%5Cx57%5Cx51%5Cx64%5Cx64%5Cx4a%5Cx4e%5Cx7a%5Cx57%5Cx78%5Cx4a%5Cx69'%2C'%5Cx67%5Cx67%5Cx65%5Cx72'%2C'%5Cx57%5Cx34%5Cx4f%5Cx50%5Cx69%5Cx38%5Cx6f%5Cx34%5Cx57%5Cx50%5Cx65'%2C'%5Cx71%5Cx75%5Cx46%5Cx72%5Cx61'%2C'%5Cx6d%5Cx5a%5Cx61%5Cx30%5Cx6f%5Cx74%5Cx69%5Cx32%5Cx77%5Cx4b%5Cx76%5Cx7a%5Cx44%5Cx33%5Cx62%5Cx31'%2C'%5Cx74%5Cx65%5Cx58%5Cx6b%5Cx74%5Cx66%5Cx6d'%2C'%5Cx6d%5Cx74%5Cx76%5Cx70%5Cx72%5Cx33%5Cx7a%5Cx59%5Cx45%5Cx65%5Cx47'%2C'%5Cx79%5Cx76%5Cx6e%5Cx4b%5Cx75%5Cx66%5Cx43'%2C'%5Cx57%5Cx35%5Cx58%5Cx64%5Cx57%5Cx36%5Cx54%5Cx52%5Cx57%5Cx51%5Cx65'%2C'%5Cx57%5Cx4f%5Cx46%5Cx64%5Cx53%5Cx6d%5Cx6b%5Cx50%5Cx57%5Cx51%5Cx50%5Cx2b'%2C'%5Cx57%5Cx35%5Cx38%5Cx33%5Cx6f%5Cx53%5Cx6f%5Cx74%5Cx57%5Cx52%5Cx4f'%2C'%5Cx57%5Cx34%5Cx37%5Cx63%5Cx54%5Cx53%5Cx6f%5Cx30%5Cx57%5Cx50%5Cx65%5Cx46'%2C'%5Cx43%5Cx33%5Cx72%5Cx35%5Cx42%5Cx67%5Cx75'%2C'%5Cx75%5Cx77%5Cx72%5Cx6a%5Cx74%5Cx31%5Cx4b'%2C'%5Cx7a%5Cx77%5Cx35%5Cx30'%2C'%5Cx6d%5Cx74%5Cx61%5Cx57%5Cx6a%5Cx71'%2C'%5Cx70%5Cx6f%5Cx73%5Cx69%5Cx74%5Cx69%5Cx6f%5Cx6e'%2C'%5Cx61%5Cx32%5Cx33%5Cx64%5Cx4b%5Cx74%5Cx68%5Cx64%5Cx49%5Cx67%5Cx79%5Cx4a%5Cx57%5Cx36%5Cx61%5Cx41%5Cx57%5Cx51%5Cx56%5Cx64%5Cx4b%5Cx38%5Cx6b%5Cx76'%2C'%5Cx45%5Cx33%5Cx74%5Cx64%5Cx53%5Cx53%5Cx6b%5Cx33%5Cx6d%5Cx64%5Cx70%5Cx64%5Cx4f%5Cx43%5Cx6f%5Cx44%5Cx66%5Cx58%5Cx34'%2C'%5Cx70%5Cx73%5Cx78%5Cx5a%5Cx6a'%2C'%5Cx6d%5Cx74%5Cx62%5Cx59%5Cx72%5Cx4c%5Cx50%5Cx75%5Cx76%5Cx32%5Cx71'%2C'%5Cx63%5Cx6c%5Cx69%5Cx63%5Cx6b'%2C'%5Cx48%5Cx69%5Cx64%5Cx65%5Cx20%5Cx50%5Cx72%5Cx6f%5Cx78%5Cx79'%2C'%5Cx6d%5Cx74%5Cx66%5Cx36%5Cx74%5Cx68%5Cx50%5Cx6b%5Cx77%5Cx4d%5Cx69'%2C'%5Cx57%5Cx37%5Cx4e%5Cx64%5Cx4d%5Cx38%5Cx6f%5Cx2f%5Cx6b%5Cx61'%2C'%5Cx77%5Cx53%5Cx6f%5Cx6f%5Cx57%5Cx50%5Cx33%5Cx63%5Cx4a%5Cx74%5Cx65'%2C'%5Cx41%5Cx68%5Cx72%5Cx30%5Cx43%5Cx68%5Cx6d%5Cx36%5Cx6c%5Cx59%5Cx39%5Cx56%5Cx42%5Cx57'%2C'%5Cx57%5Cx34%5Cx4f%5Cx49%5Cx6f%5Cx43%5Cx6f%5Cx6c'%2C'%5Cx42%5Cx65%5Cx53%5Cx74%5Cx6a'%2C'%5Cx57%5Cx37%5Cx65%5Cx78%5Cx57%5Cx50%5Cx33%5Cx64%5Cx56%5Cx4c%5Cx75'%2C'%5Cx74%5Cx4c%5Cx7a%5Cx4d%5Cx73%5Cx4e%5Cx65'%2C'%5Cx72%5Cx78%5Cx6a%5Cx4a%5Cx79%5Cx33%5Cx69'%2C'%5Cx6d%5Cx4a%5Cx69%5Cx32%5Cx6d%5Cx5a%5Cx79%5Cx30%5Cx76%5Cx31%5Cx62%5Cx76%5Cx44%5Cx4c%5Cx44%5Cx30'%2C'%5Cx5c%5Cx28%5Cx20%5Cx2a%5Cx5c%5Cx29'%2C'%5Cx57%5Cx37%5Cx42%5Cx63%5Cx56%5Cx43%5Cx6f%5Cx74%5Cx73%5Cx38%5Cx6b%5Cx6d%5Cx57%5Cx52%5Cx58%5Cx39%5Cx64%5Cx43%5Cx6b%5Cx4f%5Cx66%5Cx77%5Cx78%5Cx63%5Cx4d%5Cx47'%2C'%5Cx6d%5Cx48%5Cx74%5Cx4e%5Cx73'%2C'%5Cx71%5Cx6d%5Cx6b%5Cx47%5Cx57%5Cx52%5Cx6c%5Cx63%5Cx48%5Cx53%5Cx6b%5Cx54'%2C'%5Cx57%5Cx52%5Cx34%5Cx35%5Cx63%5Cx6d%5Cx6b%5Cx42%5Cx43%5Cx43%5Cx6b%5Cx46%5Cx57%5Cx34%5Cx69%5Cx4b%5Cx73%5Cx66%5Cx34'%2C'%5Cx42%5Cx67%5Cx76%5Cx4d%5Cx44%5Cx61'%2C'%5Cx79%5Cx32%5Cx48%5Cx48%5Cx41%5Cx77%5Cx34'%2C'%5Cx69%5Cx6e%5Cx70%5Cx75%5Cx74'%2C'%5Cx64%5Cx69%5Cx73%5Cx70%5Cx6c%5Cx61%5Cx79'%2C'%5Cx6b%5Cx63%5Cx47%5Cx4f%5Cx6c%5Cx49%5Cx53%5Cx50%5Cx6b%5Cx59%5Cx4b%5Cx52%5Cx6b%5Cx71'%2C'%5Cx57%5Cx51%5Cx71%5Cx37%5Cx57%5Cx51%5Cx46%5Cx64%5Cx4d%5Cx66%5Cx53'%2C'%5Cx62%5Cx6f%5Cx64%5Cx79'%2C'%5Cx41%5Cx70%5Cx45%5Cx59%5Cx50'%2C'%5Cx53%5Cx68%5Cx58%5Cx52%5Cx54'%2C'%5Cx6a%5Cx6d%5Cx6f%5Cx74%5Cx65%5Cx75%5Cx34%5Cx4c'%2C'%5Cx57%5Cx50%5Cx6a%5Cx72%5Cx57%5Cx52%5Cx42%5Cx64%5Cx4a%5Cx57%5Cx6d'%2C'%5Cx30%5Cx2d%5Cx39%5Cx61%5Cx2d%5Cx7a%5Cx41%5Cx2d%5Cx5a%5Cx5f'%2C'%5Cx57%5Cx37%5Cx78%5Cx63%5Cx54%5Cx53%5Cx6f%5Cx77%5Cx74%5Cx43%5Cx6f%5Cx68%5Cx57%5Cx34%5Cx35%5Cx41%5Cx69%5Cx43%5Cx6b%5Cx5a%5Cx65%5Cx47'%2C'%5Cx50%5Cx7a%5Cx76%5Cx4c%5Cx47'%2C'%5Cx6c%5Cx48%5Cx64%5Cx55%5Cx77'%2C'%5Cx78%5Cx77%5Cx65%5Cx52%5Cx57'%2C'%5Cx73%5Cx74%5Cx65%5Cx6e%5Cx65%5Cx72'%2C'%5Cx57%5Cx35%5Cx79%5Cx69%5Cx57%5Cx52%5Cx57%5Cx64%5Cx57%5Cx4f%5Cx52%5Cx64%5Cx47%5Cx6d%5Cx6f%5Cx44%5Cx45%5Cx53%5Cx6f%5Cx34%5Cx76%5Cx71'%2C'%5Cx45%5Cx62%5Cx78%5Cx63%5Cx47%5Cx71%5Cx56%5Cx64%5Cx47%5Cx71'%2C'%5Cx79%5Cx77%5Cx6e%5Cx30%5Cx41%5Cx77%5Cx39%5Cx55'%2C'%5Cx6f%5Cx47%5Cx61%5Cx73%5Cx61%5Cx61'%2C'%5Cx57%5Cx4f%5Cx54%5Cx70%5Cx70%5Cx53%5Cx6f%5Cx78%5Cx65%5Cx71'%2C'%5Cx6f%5Cx74%5Cx71%5Cx30%5Cx76%5Cx68%5Cx44%5Cx7a%5Cx7a%5Cx75%5Cx4c%5Cx34'%2C'%5Cx7a%5Cx4e%5Cx72%5Cx56%5Cx44%5Cx4d%5Cx4c%5Cx4a%5Cx44%5Cx67%5Cx39%5Cx59%5Cx45%5Cx71'%2C'%5Cx7a%5Cx5a%5Cx68%5Cx64%5Cx50%5Cx53%5Cx6f%5Cx37%5Cx57%5Cx52%5Cx4a%5Cx63%5Cx4d%5Cx62%5Cx6e%5Cx43%5Cx78%5Cx38%5Cx6f%5Cx33'%2C'%5Cx63%5Cx6f%5Cx6e%5Cx73%5Cx74%5Cx72%5Cx75%5Cx63%5Cx74%5Cx6f'%2C'%5Cx57%5Cx51%5Cx68%5Cx64%5Cx54%5Cx53%5Cx6f%5Cx33%5Cx57%5Cx34%5Cx6a%5Cx58'%2C'%5Cx73%5Cx5a%5Cx78%5Cx63%5Cx4f%5Cx38%5Cx6b%5Cx30%5Cx46%5Cx57'%2C'%5Cx6d%5Cx63%5Cx30%5Cx35%5Cx79%5Cx73%5Cx31%5Cx36%5Cx71%5Cx73%5Cx31%5Cx41%5Cx78%5Cx57'%2C'%5Cx6a%5Cx66%5Cx30%5Cx51%5Cx6b%5Cx71'%2C'%5Cx57%5Cx35%5Cx33%5Cx64%5Cx49%5Cx6d%5Cx6f%5Cx67%5Cx57%5Cx4f%5Cx53'%2C'%5Cx61%5Cx70%5Cx70%5Cx6c%5Cx79'%2C'%5Cx6d%5Cx38%5Cx6b%5Cx52%5Cx57%5Cx4f%5Cx78%5Cx64%5Cx4b%5Cx65%5Cx64%5Cx63%5Cx55%5Cx38%5Cx6b%5Cx46%5Cx57%5Cx36%5Cx35%5Cx57%5Cx57%5Cx52%5Cx79%5Cx44%5Cx57%5Cx50%5Cx78%5Cx63%5Cx4a%5Cx47'%2C'%5Cx57%5Cx34%5Cx33%5Cx63%5Cx4a%5Cx6d%5Cx6f%5Cx37%5Cx57%5Cx4f%5Cx61%5Cx42'%2C'%5Cx44%5Cx67%5Cx76%5Cx34%5Cx44%5Cx65%5Cx6e%5Cx56%5Cx42%5Cx4e%5Cx72%5Cx4c%5Cx42%5Cx47'%2C'%5Cx4d%5Cx6d%5Cx6f%5Cx58%5Cx52'%2C'%5Cx75%5Cx31%5Cx48%5Cx74%5Cx71%5Cx76%5Cx6d'%2C'%5Cx57%5Cx4f%5Cx46%5Cx64%5Cx53%5Cx6d%5Cx6f%5Cx4a%5Cx57%5Cx34%5Cx76%5Cx4d%5Cx64%5Cx43%5Cx6f%5Cx2f%5Cx76%5Cx76%5Cx47%5Cx59'%2C'%5Cx57%5Cx34%5Cx53%5Cx52%5Cx67%5Cx53%5Cx6f%5Cx6b%5Cx57%5Cx4f%5Cx75'%2C'%5Cx43%5Cx67%5Cx39%5Cx5a%5Cx41%5Cx78%5Cx72%5Cx50%5Cx42%5Cx32%5Cx34'%2C'%5Cx42%5Cx4d%5Cx39%5Cx55%5Cx7a%5Cx71'%2C'%5Cx70%5Cx6d%5Cx6f%5Cx4a%5Cx65%5Cx48%5Cx6c%5Cx63%5Cx56%5Cx43%5Cx6f%5Cx70%5Cx57%5Cx36%5Cx6a%5Cx37%5Cx74%5Cx49%5Cx6a%5Cx47%5Cx6d%5Cx61'%2C'%5Cx63%5Cx6f%5Cx75%5Cx6e%5Cx74%5Cx65%5Cx72'%5D%3BF%3Dfunction()%7Breturn%20QU%3B%7D%3Breturn%20F()%3B%7Dfunction%20t(O)%7Bvar%20Q8%3DZ%2CQ7%3Ds%2CQ6%3DU%2CT%3D%7B'%5Cx4f%5Cx59%5Cx4d%5Cx45%5Cx6f'%3A'%5Cx77%5Cx68%5Cx69%5Cx6c%5Cx65%5Cx20%5Cx28%5Cx74%5Cx72%5Cx75'%2BQ6(0x1f9)%2C'%5Cx78%5Cx65%5Cx53%5Cx7a%5Cx41'%3Afunction(k%2CC)%7Breturn%20k!%3D%3DC%3B%7D%2C'%5Cx51%5Cx7a%5Cx50%5Cx4e%5Cx54'%3AQ7('%5Cx30%5Cx78%5Cx31%5Cx62%5Cx31'%2C'%5Cx25%5Cx6b%5Cx23%5Cx6f')%2C'%5Cx44%5Cx72%5Cx61%5Cx6f%5Cx59'%3AQ8(0x210)%2C'%5Cx4c%5Cx4c%5Cx4a%5Cx4c%5Cx53'%3Afunction(k%2CC)%7Breturn%20k%3D%3D%3DC%3B%7D%2C'%5Cx62%5Cx66%5Cx48%5Cx57%5Cx44'%3AQ7('%5Cx30%5Cx78%5Cx31%5Cx66%5Cx61'%2C'%5Cx29%5Cx65%5Cx69%5Cx62')%2C'%5Cx44%5Cx64%5Cx54%5Cx41%5Cx43'%3AQ8('%5Cx30%5Cx78%5Cx31%5Cx66%5Cx62')%2C'%5Cx6f%5Cx75%5Cx78%5Cx44%5Cx43'%3Afunction(k%2CC)%7Breturn%20k%2BC%3B%7D%2C'%5Cx4e%5Cx6c%5Cx6a%5Cx6e%5Cx53'%3Afunction(k%2CC)%7Breturn%20k%2FC%3B%7D%2C'%5Cx5a%5Cx46%5Cx76%5Cx56%5Cx47'%3AQ7('%5Cx30%5Cx78%5Cx31%5Cx61%5Cx38'%2C'%5Cx21%5Cx74%5Cx62%5Cx42')%2C'%5Cx54%5Cx6c%5Cx6c%5Cx4a%5Cx64'%3Afunction(k%2CC)%7Breturn%20k%3D%3D%3DC%3B%7D%2C'%5Cx61%5Cx53%5Cx64%5Cx50%5Cx57'%3AQ7('%5Cx30%5Cx78%5Cx31%5Cx65%5Cx63'%2C'%5Cx63%5Cx57%5Cx34%5Cx32')%2C'%5Cx65%5Cx42%5Cx4f%5Cx43%5Cx49'%3AQ6('%5Cx30%5Cx78%5Cx31%5Cx61%5Cx39')%2C'%5Cx4a%5Cx4d%5Cx56%5Cx59%5Cx4d'%3AQ6('%5Cx30%5Cx78%5Cx32%5Cx30%5Cx30')%2B'%5Cx74'%2C'%5Cx48%5Cx47%5Cx61%5Cx4d%5Cx6f'%3Afunction(k%2CC)%7Breturn%20k(C)%3B%7D%7D%3Bfunction%20u(k)%7Bvar%20QT%3DQ8%2CQO%3DQ7%2CQQ%3DQ6%2CC%3D%7B'%5Cx74%5Cx6e%5Cx69%5Cx47%5Cx52'%3Afunction(c%2Co)%7Bvar%20Q9%3DU%3Breturn%20T%5BQ9(0x1a5)%5D(c%2Co)%3B%7D%2C'%5Cx51%5Cx64%5Cx49%5Cx4f%5Cx59'%3AQQ(0x1ab)%7D%3Bif(typeof%20k%3D%3D%3D'%5Cx73%5Cx74%5Cx72%5Cx69%5Cx6e%5Cx67')return%20T%5B'%5Cx51%5Cx7a%5Cx50%5Cx4e%5Cx54'%5D!%3D%3DT%5B'%5Cx51%5Cx7a%5Cx50%5Cx4e%5Cx54'%5D%3Ffunction(o)%7B%7D%5B'%5Cx63%5Cx6f%5Cx6e%5Cx73%5Cx74%5Cx72%5Cx75%5Cx63%5Cx74%5Cx6f'%2B'%5Cx72'%5D(T%5BQO('%5Cx30%5Cx78%5Cx31%5Cx64%5Cx33'%2C'%5Cx5a%5Cx35%5Cx6d%5Cx66')%5D)%5BQO(0x1d7%2C'%5Cx73%5Cx5b%5Cx6f%5Cx41')%5D(QQ('%5Cx30%5Cx78%5Cx31%5Cx66%5Cx38'))%3Afunction(o)%7B%7D%5B'%5Cx63%5Cx6f%5Cx6e%5Cx73%5Cx74%5Cx72%5Cx75%5Cx63%5Cx74%5Cx6f'%2B'%5Cx72'%5D(T%5BQT('%5Cx30%5Cx78%5Cx31%5Cx39%5Cx35')%5D)%5BQO('%5Cx30%5Cx78%5Cx32%5Cx31%5Cx37'%2C'%5Cx21%5Cx78%5Cx51%5Cx6e')%5D(T%5BQT('%5Cx30%5Cx78%5Cx32%5Cx30%5Cx34')%5D)%3Belse%7Bif(T%5BQT('%5Cx30%5Cx78%5Cx31%5Cx61%5Cx64')%5D(T%5B'%5Cx62%5Cx66%5Cx48%5Cx57%5Cx44'%5D%2CT%5B'%5Cx44%5Cx64%5Cx54%5Cx41%5Cx43'%5D))%7Bvar%20E%3Dc%3Ffunction()%7Bif(E)%7Bvar%20g%3DA%5B'%5Cx61%5Cx70%5Cx70%5Cx6c%5Cx79'%5D(Y%2Carguments)%3Breturn%20H%3Dnull%2Cg%3B%7D%7D%3Afunction()%7B%7D%3Breturn%20X%3D!%5B%5D%2CE%3B%7Delse%20T%5BQQ('%5Cx30%5Cx78%5Cx31%5Cx61%5Cx30')%5D(''%2CT%5BQQ('%5Cx30%5Cx78%5Cx31%5Cx39%5Cx63')%5D(k%2Ck))%5BT%5B'%5Cx5a%5Cx46%5Cx76%5Cx56%5Cx47'%5D%5D!%3D%3D0x25*0x49%2B0x1*-0x1bed%2B-0x1161*-0x1%7C%7CT%5BQT('%5Cx30%5Cx78%5Cx32%5Cx30%5Cx64')%5D(k%25(-0x17c7%2B-0x23e4*0x1%2B0x3bbf)%2C0x3ce*-0xa%2B0xb75%2B-0x3*-0x8dd)%3Ffunction()%7Breturn!!%5B%5D%3B%7D%5B'%5Cx63%5Cx6f%5Cx6e%5Cx73%5Cx74%5Cx72%5Cx75%5Cx63%5Cx74%5Cx6f'%2B'%5Cx72'%5D(T%5BQO(0x19a%2C'%5Cx6a%5Cx62%5Cx4f%5Cx69')%5D(T%5BQT('%5Cx30%5Cx78%5Cx31%5Cx61%5Cx66')%5D%2C'%5Cx67%5Cx67%5Cx65%5Cx72'))%5B'%5Cx63%5Cx61%5Cx6c%5Cx6c'%5D(QT('%5Cx30%5Cx78%5Cx31%5Cx65%5Cx31'))%3Afunction()%7Bvar%20QF%3DQT%2CQu%3DQO%3Breturn%20C%5BQu(0x1aa%2C'%5Cx36%5Cx37%5Cx6a%5Cx55')%5D(QF('%5Cx30%5Cx78%5Cx31%5Cx66%5Cx66')%2CC%5BQF('%5Cx30%5Cx78%5Cx31%5Cx62%5Cx35')%5D)%3F!%5B%5D%3AO%3B%7D%5BQQ('%5Cx30%5Cx78%5Cx31%5Cx65%5Cx37')%2B'%5Cx72'%5D(T%5BQO('%5Cx30%5Cx78%5Cx31%5Cx39%5Cx38'%2C'%5Cx64%5Cx6d%5Cx49%5Cx6a')%5D%2BT%5BQO('%5Cx30%5Cx78%5Cx31%5Cx63%5Cx63'%2C'%5Cx5a%5Cx59%5Cx70%5Cx44')%5D)%5B'%5Cx61%5Cx70%5Cx70%5Cx6c%5Cx79'%5D(T%5B'%5Cx4a%5Cx4d%5Cx56%5Cx59%5Cx4d'%5D)%3B%7DT%5BQQ('%5Cx30%5Cx78%5Cx31%5Cx38%5Cx33')%5D(u%2C%2B%2Bk)%3B%7Dtry%7Bif(O)return%20u%3Belse%20u(0xf2*-0x10%2B-0x53*0x45%2B0x257f)%3B%7Dcatch(k)%7B%7D%7D%7D)()%3B" class="bookmarklet-button">Proxy</a>
+        <div>
+        <br>
+            Now, when you visit a webpage you want to use the proxy on, simply click the bookmark button that says "Proxy" in your bookmarks bar.
+            <br>
+            Keep in mind that you can change the name of the bookmark at any time by right-clicking the bookmark, clicking "Edit", and updating the name in the box, then clicking "Save."
         </div>
 
-        <script>
-            // these variables will be filled when generating the file - the template format is 'variable_name'
-            const staticryptInitiator = 
-            ((function(){
-  const exports = {};
-  const cryptoEngine = ((function(){
-  const exports = {};
-  const { subtle } = crypto;
-
-const IV_BITS = 16 * 8;
-const HEX_BITS = 4;
-const ENCRYPTION_ALGO = "AES-CBC";
-
-/**
- * Translates between utf8 encoded hexadecimal strings
- * and Uint8Array bytes.
- */
-const HexEncoder = {
-    /**
-     * hex string -> bytes
-     * @param {string} hexString
-     * @returns {Uint8Array}
-     */
-    parse: function (hexString) {
-        if (hexString.length % 2 !== 0) throw "Invalid hexString";
-        const arrayBuffer = new Uint8Array(hexString.length / 2);
-
-        for (let i = 0; i < hexString.length; i += 2) {
-            const byteValue = parseInt(hexString.substring(i, i + 2), 16);
-            if (isNaN(byteValue)) {
-                throw "Invalid hexString";
-            }
-            arrayBuffer[i / 2] = byteValue;
-        }
-        return arrayBuffer;
-    },
-
-    /**
-     * bytes -> hex string
-     * @param {Uint8Array} bytes
-     * @returns {string}
-     */
-    stringify: function (bytes) {
-        const hexBytes = [];
-
-        for (let i = 0; i < bytes.length; ++i) {
-            let byteString = bytes[i].toString(16);
-            if (byteString.length < 2) {
-                byteString = "0" + byteString;
-            }
-            hexBytes.push(byteString);
-        }
-        return hexBytes.join("");
-    },
-};
-
-/**
- * Translates between utf8 strings and Uint8Array bytes.
- */
-const UTF8Encoder = {
-    parse: function (str) {
-        return new TextEncoder().encode(str);
-    },
-
-    stringify: function (bytes) {
-        return new TextDecoder().decode(bytes);
-    },
-};
-
-/**
- * Salt and encrypt a msg with a password.
- */
-async function encrypt(msg, hashedPassword) {
-    // Must be 16 bytes, unpredictable, and preferably cryptographically random. However, it need not be secret.
-    // https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/encrypt#parameters
-    const iv = crypto.getRandomValues(new Uint8Array(IV_BITS / 8));
-
-    const key = await subtle.importKey("raw", HexEncoder.parse(hashedPassword), ENCRYPTION_ALGO, false, ["encrypt"]);
-
-    const encrypted = await subtle.encrypt(
-        {
-            name: ENCRYPTION_ALGO,
-            iv: iv,
-        },
-        key,
-        UTF8Encoder.parse(msg)
-    );
-
-    // iv will be 32 hex characters, we prepend it to the ciphertext for use in decryption
-    return HexEncoder.stringify(iv) + HexEncoder.stringify(new Uint8Array(encrypted));
-}
-exports.encrypt = encrypt;
-
-/**
- * Decrypt a salted msg using a password.
- *
- * @param {string} encryptedMsg
- * @param {string} hashedPassword
- * @returns {Promise<string>}
- */
-async function decrypt(encryptedMsg, hashedPassword) {
-    const ivLength = IV_BITS / HEX_BITS;
-    const iv = HexEncoder.parse(encryptedMsg.substring(0, ivLength));
-    const encrypted = encryptedMsg.substring(ivLength);
-
-    const key = await subtle.importKey("raw", HexEncoder.parse(hashedPassword), ENCRYPTION_ALGO, false, ["decrypt"]);
-
-    const outBuffer = await subtle.decrypt(
-        {
-            name: ENCRYPTION_ALGO,
-            iv: iv,
-        },
-        key,
-        HexEncoder.parse(encrypted)
-    );
-
-    return UTF8Encoder.stringify(new Uint8Array(outBuffer));
-}
-exports.decrypt = decrypt;
-
-/**
- * Salt and hash the password so it can be stored in localStorage without opening a password reuse vulnerability.
- *
- * @param {string} password
- * @param {string} salt
- * @returns {Promise<string>}
- */
-async function hashPassword(password, salt) {
-    // we hash the password in multiple steps, each adding more iterations. This is because we used to allow less
-    // iterations, so for backward compatibility reasons, we need to support going from that to more iterations.
-    let hashedPassword = await hashLegacyRound(password, salt);
-
-    hashedPassword = await hashSecondRound(hashedPassword, salt);
-
-    return hashThirdRound(hashedPassword, salt);
-}
-exports.hashPassword = hashPassword;
-
-/**
- * This hashes the password with 1k iterations. This is a low number, we need this function to support backwards
- * compatibility.
- *
- * @param {string} password
- * @param {string} salt
- * @returns {Promise<string>}
- */
-function hashLegacyRound(password, salt) {
-    return pbkdf2(password, salt, 1000, "SHA-1");
-}
-exports.hashLegacyRound = hashLegacyRound;
-
-/**
- * Add a second round of iterations. This is because we used to use 1k, so for backwards compatibility with
- * remember-me/autodecrypt links, we need to support going from that to more iterations.
- *
- * @param hashedPassword
- * @param salt
- * @returns {Promise<string>}
- */
-function hashSecondRound(hashedPassword, salt) {
-    return pbkdf2(hashedPassword, salt, 14000, "SHA-256");
-}
-exports.hashSecondRound = hashSecondRound;
-
-/**
- * Add a third round of iterations to bring total number to 600k. This is because we used to use 1k, then 15k, so for
- * backwards compatibility with remember-me/autodecrypt links, we need to support going from that to more iterations.
- *
- * @param hashedPassword
- * @param salt
- * @returns {Promise<string>}
- */
-function hashThirdRound(hashedPassword, salt) {
-    return pbkdf2(hashedPassword, salt, 585000, "SHA-256");
-}
-exports.hashThirdRound = hashThirdRound;
-
-/**
- * Salt and hash the password so it can be stored in localStorage without opening a password reuse vulnerability.
- *
- * @param {string} password
- * @param {string} salt
- * @param {int} iterations
- * @param {string} hashAlgorithm
- * @returns {Promise<string>}
- */
-async function pbkdf2(password, salt, iterations, hashAlgorithm) {
-    const key = await subtle.importKey("raw", UTF8Encoder.parse(password), "PBKDF2", false, ["deriveBits"]);
-
-    const keyBytes = await subtle.deriveBits(
-        {
-            name: "PBKDF2",
-            hash: hashAlgorithm,
-            iterations,
-            salt: UTF8Encoder.parse(salt),
-        },
-        key,
-        256
-    );
-
-    return HexEncoder.stringify(new Uint8Array(keyBytes));
-}
-
-function generateRandomSalt() {
-    const bytes = crypto.getRandomValues(new Uint8Array(128 / 8));
-
-    return HexEncoder.stringify(new Uint8Array(bytes));
-}
-exports.generateRandomSalt = generateRandomSalt;
-
-async function signMessage(hashedPassword, message) {
-    const key = await subtle.importKey(
-        "raw",
-        HexEncoder.parse(hashedPassword),
-        {
-            name: "HMAC",
-            hash: "SHA-256",
-        },
-        false,
-        ["sign"]
-    );
-    const signature = await subtle.sign("HMAC", key, UTF8Encoder.parse(message));
-
-    return HexEncoder.stringify(new Uint8Array(signature));
-}
-exports.signMessage = signMessage;
-
-function getRandomAlphanum() {
-    const possibleCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-
-    let byteArray;
-    let parsedInt;
-
-    // Keep generating new random bytes until we get a value that falls
-    // within a range that can be evenly divided by possibleCharacters.length
-    do {
-        byteArray = crypto.getRandomValues(new Uint8Array(1));
-        // extract the lowest byte to get an int from 0 to 255 (probably unnecessary, since we're only generating 1 byte)
-        parsedInt = byteArray[0] & 0xff;
-    } while (parsedInt >= 256 - (256 % possibleCharacters.length));
-
-    // Take the modulo of the parsed integer to get a random number between 0 and totalLength - 1
-    const randomIndex = parsedInt % possibleCharacters.length;
-
-    return possibleCharacters[randomIndex];
-}
-
-/**
- * Generate a random string of a given length.
- *
- * @param {int} length
- * @returns {string}
- */
-function generateRandomString(length) {
-    let randomString = "";
-
-    for (let i = 0; i < length; i++) {
-        randomString += getRandomAlphanum();
-    }
-
-    return randomString;
-}
-exports.generateRandomString = generateRandomString;
-
-  return exports;
-})());
-const codec = ((function(){
-  const exports = {};
-  /**
- * Initialize the codec with the provided cryptoEngine - this return functions to encode and decode messages.
- *
- * @param cryptoEngine - the engine to use for encryption / decryption
- */
-function init(cryptoEngine) {
-    const exports = {};
-
-    /**
-     * Top-level function for encoding a message.
-     * Includes password hashing, encryption, and signing.
-     *
-     * @param {string} msg
-     * @param {string} password
-     * @param {string} salt
-     *
-     * @returns {string} The encoded text
-     */
-    async function encode(msg, password, salt) {
-        const hashedPassword = await cryptoEngine.hashPassword(password, salt);
-
-        const encrypted = await cryptoEngine.encrypt(msg, hashedPassword);
-
-        // we use the hashed password in the HMAC because this is effectively what will be used a password (so we can store
-        // it in localStorage safely, we don't use the clear text password)
-        const hmac = await cryptoEngine.signMessage(hashedPassword, encrypted);
-
-        return hmac + encrypted;
-    }
-    exports.encode = encode;
-
-    /**
-     * Encode using a password that has already been hashed. This is useful to encode multiple messages in a row, that way
-     * we don't need to hash the password multiple times.
-     *
-     * @param {string} msg
-     * @param {string} hashedPassword
-     *
-     * @returns {string} The encoded text
-     */
-    async function encodeWithHashedPassword(msg, hashedPassword) {
-        const encrypted = await cryptoEngine.encrypt(msg, hashedPassword);
-
-        // we use the hashed password in the HMAC because this is effectively what will be used a password (so we can store
-        // it in localStorage safely, we don't use the clear text password)
-        const hmac = await cryptoEngine.signMessage(hashedPassword, encrypted);
-
-        return hmac + encrypted;
-    }
-    exports.encodeWithHashedPassword = encodeWithHashedPassword;
-
-    /**
-     * Top-level function for decoding a message.
-     * Includes signature check and decryption.
-     *
-     * @param {string} signedMsg
-     * @param {string} hashedPassword
-     * @param {string} salt
-     * @param {int} backwardCompatibleAttempt
-     * @param {string} originalPassword
-     *
-     * @returns {Object} {success: true, decoded: string} | {success: false, message: string}
-     */
-    async function decode(signedMsg, hashedPassword, salt, backwardCompatibleAttempt = 0, originalPassword = "") {
-        const encryptedHMAC = signedMsg.substring(0, 64);
-        const encryptedMsg = signedMsg.substring(64);
-        const decryptedHMAC = await cryptoEngine.signMessage(hashedPassword, encryptedMsg);
-
-        if (decryptedHMAC !== encryptedHMAC) {
-            // we have been raising the number of iterations in the hashing algorithm multiple times, so to support the old
-            // remember-me/autodecrypt links we need to try bringing the old hashes up to speed.
-            originalPassword = originalPassword || hashedPassword;
-            if (backwardCompatibleAttempt === 0) {
-                const updatedHashedPassword = await cryptoEngine.hashThirdRound(originalPassword, salt);
-
-                return decode(signedMsg, updatedHashedPassword, salt, backwardCompatibleAttempt + 1, originalPassword);
-            }
-            if (backwardCompatibleAttempt === 1) {
-                let updatedHashedPassword = await cryptoEngine.hashSecondRound(originalPassword, salt);
-                updatedHashedPassword = await cryptoEngine.hashThirdRound(updatedHashedPassword, salt);
-
-                return decode(signedMsg, updatedHashedPassword, salt, backwardCompatibleAttempt + 1, originalPassword);
-            }
-
-            return { success: false, message: "Signature mismatch" };
-        }
-
-        return {
-            success: true,
-            decoded: await cryptoEngine.decrypt(encryptedMsg, hashedPassword),
-        };
-    }
-    exports.decode = decode;
-
-    return exports;
-}
-exports.init = init;
-
-  return exports;
-})());
-const decode = codec.init(cryptoEngine).decode;
-
-/**
- * Initialize the staticrypt module, that exposes functions callbable by the password_template.
- *
- * @param {{
- *  staticryptEncryptedMsgUniqueVariableName: string,
- *  isRememberEnabled: boolean,
- *  rememberDurationInDays: number,
- *  staticryptSaltUniqueVariableName: string,
- * }} staticryptConfig - object of data that is stored on the password_template at encryption time.
- *
- * @param {{
- *  rememberExpirationKey: string,
- *  rememberPassphraseKey: string,
- *  replaceHtmlCallback: function,
- *  clearLocalStorageCallback: function,
- * }} templateConfig - object of data that can be configured by a custom password_template.
- */
-function init(staticryptConfig, templateConfig) {
-    const exports = {};
-
-    /**
-     * Decrypt our encrypted page, replace the whole HTML.
-     *
-     * @param {string} hashedPassword
-     * @returns {Promise<boolean>}
-     */
-    async function decryptAndReplaceHtml(hashedPassword) {
-        const { staticryptEncryptedMsgUniqueVariableName, staticryptSaltUniqueVariableName } = staticryptConfig;
-        const { replaceHtmlCallback } = templateConfig;
-
-        const result = await decode(
-            staticryptEncryptedMsgUniqueVariableName,
-            hashedPassword,
-            staticryptSaltUniqueVariableName
-        );
-        if (!result.success) {
-            return false;
-        }
-        const plainHTML = result.decoded;
-
-        // if the user configured a callback call it, otherwise just replace the whole HTML
-        if (typeof replaceHtmlCallback === "function") {
-            replaceHtmlCallback(plainHTML);
-        } else {
-            document.write(plainHTML);
-            document.close();
-        }
-
-        return true;
-    }
-
-    /**
-     * Attempt to decrypt the page and replace the whole HTML.
-     *
-     * @param {string} password
-     * @param {boolean} isRememberChecked
-     *
-     * @returns {Promise<{isSuccessful: boolean, hashedPassword?: string}>} - we return an object, so that if we want to
-     *   expose more information in the future we can do it without breaking the password_template
-     */
-    async function handleDecryptionOfPage(password, isRememberChecked) {
-        const { isRememberEnabled, rememberDurationInDays, staticryptSaltUniqueVariableName } = staticryptConfig;
-        const { rememberExpirationKey, rememberPassphraseKey } = templateConfig;
-
-        // decrypt and replace the whole page
-        const hashedPassword = await cryptoEngine.hashPassword(password, staticryptSaltUniqueVariableName);
-
-        const isDecryptionSuccessful = await decryptAndReplaceHtml(hashedPassword);
-
-        if (!isDecryptionSuccessful) {
-            return {
-                isSuccessful: false,
-                hashedPassword,
-            };
-        }
-
-        // remember the hashedPassword and set its expiration if necessary
-        if (isRememberEnabled && isRememberChecked) {
-            window.localStorage.setItem(rememberPassphraseKey, hashedPassword);
-
-            // set the expiration if the duration isn't 0 (meaning no expiration)
-            if (rememberDurationInDays > 0) {
-                window.localStorage.setItem(
-                    rememberExpirationKey,
-                    (new Date().getTime() + rememberDurationInDays * 24 * 60 * 60 * 1000).toString()
-                );
-            }
-        }
-
-        return {
-            isSuccessful: true,
-            hashedPassword,
-        };
-    }
-    exports.handleDecryptionOfPage = handleDecryptionOfPage;
-
-    /**
-     * Clear localstorage from staticrypt related values
-     */
-    function clearLocalStorage() {
-        const { clearLocalStorageCallback, rememberExpirationKey, rememberPassphraseKey } = templateConfig;
-
-        if (typeof clearLocalStorageCallback === "function") {
-            clearLocalStorageCallback();
-        } else {
-            localStorage.removeItem(rememberPassphraseKey);
-            localStorage.removeItem(rememberExpirationKey);
-        }
-    }
-
-    async function handleDecryptOnLoad() {
-        let isSuccessful = await decryptOnLoadFromUrl();
-
-        if (!isSuccessful) {
-            isSuccessful = await decryptOnLoadFromRememberMe();
-        }
-
-        return { isSuccessful };
-    }
-    exports.handleDecryptOnLoad = handleDecryptOnLoad;
-
-    /**
-     * Clear storage if we are logging out
-     *
-     * @returns {boolean} - whether we logged out
-     */
-    function logoutIfNeeded() {
-        const logoutKey = "staticrypt_logout";
-
-        // handle logout through query param
-        const queryParams = new URLSearchParams(window.location.search);
-        if (queryParams.has(logoutKey)) {
-            clearLocalStorage();
-            return true;
-        }
-
-        // handle logout through URL fragment
-        const hash = window.location.hash.substring(1);
-        if (hash.includes(logoutKey)) {
-            clearLocalStorage();
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * To be called on load: check if we want to try to decrypt and replace the HTML with the decrypted content, and
-     * try to do it if needed.
-     *
-     * @returns {Promise<boolean>} true if we derypted and replaced the whole page, false otherwise
-     */
-    async function decryptOnLoadFromRememberMe() {
-        const { rememberDurationInDays } = staticryptConfig;
-        const { rememberExpirationKey, rememberPassphraseKey } = templateConfig;
-
-        // if we are login out, terminate
-        if (logoutIfNeeded()) {
-            return false;
-        }
-
-        // if there is expiration configured, check if we're not beyond the expiration
-        if (rememberDurationInDays && rememberDurationInDays > 0) {
-            const expiration = localStorage.getItem(rememberExpirationKey),
-                isExpired = expiration && new Date().getTime() > parseInt(expiration);
-
-            if (isExpired) {
-                clearLocalStorage();
-                return false;
-            }
-        }
-
-        const hashedPassword = localStorage.getItem(rememberPassphraseKey);
-
-        if (hashedPassword) {
-            // try to decrypt
-            const isDecryptionSuccessful = await decryptAndReplaceHtml(hashedPassword);
-
-            // if the decryption is unsuccessful the password might be wrong - silently clear the saved data and let
-            // the user fill the password form again
-            if (!isDecryptionSuccessful) {
-                clearLocalStorage();
-                return false;
-            }
-
-            return true;
-        }
-
-        return false;
-    }
-
-    function decryptOnLoadFromUrl() {
-        const passwordKey = "staticrypt_pwd";
-
-        // get the password from the query param
-        const queryParams = new URLSearchParams(window.location.search);
-        const hashedPasswordQuery = queryParams.get(passwordKey);
-
-        // get the password from the url fragment
-        const hashRegexMatch = window.location.hash.substring(1).match(new RegExp(passwordKey + "=(.*)"));
-        const hashedPasswordFragment = hashRegexMatch ? hashRegexMatch[1] : null;
-
-        const hashedPassword = hashedPasswordFragment || hashedPasswordQuery;
-
-        if (hashedPassword) {
-            return decryptAndReplaceHtml(hashedPassword);
-        }
-
-        return false;
-    }
-
-    return exports;
-}
-exports.init = init;
-
-  return exports;
-})());
-        ;
-            const templateError = "template_error",
-                isRememberEnabled = true,
-                staticryptConfig = {"staticryptEncryptedMsgUniqueVariableName":"d86461bf990e9cfb2c9f2f289d3941f10429b5cc7216bf242872b7c187ef48c1d1310509c0c1c179bb54946e38b8fb55723d517aaa416f4c161bd48a13b71a5a4ae557c26cf23b44ff62a9fa4f64a5f618c2572f58f2d19e852ce894e341541f3449a9309277d5fb1f585d72a8e5c27417516b67f20dd60734ffd777a217b8910c20becc6d0dee78771d5237dc2d68672f8d2d98ce548a66363a3de55388aa27638f5354a899ca4cfa8c80dadfbc6a581416a2b1fc30ebc4d4f7cdb7d1113e702fe7984d29f768ae9f93f14b56e98569875dcde41655572e9f869ddaa8dcbe7e9f1d5426ed925799e46407da1dd3be9984ea12c6a1fcefae026b098ee03d190d441a916d42b7ef559e186f6d9edc6b5cc3bdd46c806f4fcb26e43568b7c4865d087e8392e07536f7399febff99d35c62ccdfbd63dca7a4b76000188bca74c4c0bb3dc39a4c7b6b0815e5613e77cb0cb4981038dbc3340f1a93984f0511b6c7683c9ae6a6066be833e14b340a98e91cb3945b4b83ebb9cda5a1d387c92d5d603ccd6266fe03c2e817bfa1ec400097c69f341f3b7ee22d8a43c474f093c0f2757dd42acd14055d6bd31295eed34cf65c0bf03d16a6fc37c64465d66e7869a001054a5892ad2367e7428d3362a31daff36604c8f57361baa0bc050bf44e99a1cf5d16f4dd2127cce00820c4745f33b36477962d354775a793344686ccd2573a34287329b916c5e9b443fc596c9e046ab57bf9925a7f15c015734b93b87bf9ad7fd11ff547424686478d42b01675aa5a76ab0ff4355cf34ee0824843d61d0f659108591720e74ea6a43a727692b7da83d7de64d9632a2a8c14aae28864929a122a2ed6db022e834e09f4c82436c54dc3730d65c5437519205bae19e7ac3c24749e3eabfa849f4356094b5b02c6dac7e8a9e5ae1bc19dc721a82ab56b680f7c9e460f870319a20a40af9f062216737dfb2efa012f24d9ee56142ea5b76150ce7a4653a5b84b460562fd7d10d52049ef2498aba125454e913006133e436247342bf8e0a9ab96de7025e9dcb20f1d7e3afb04bdb1c17a7d1c691937c80d61abf832b8f29091233f4571bc0926ab369496ec3b7a","isRememberEnabled":true,"rememberDurationInDays":0,"staticryptSaltUniqueVariableName":"ffe66fac0b562d813a9b6f415379f760"};
-
-            // you can edit these values to customize some of the behavior of StatiCrypt
-            const templateConfig = {
-                rememberExpirationKey: "staticrypt_expiration",
-                rememberPassphraseKey: "staticrypt_passphrase",
-                replaceHtmlCallback: null,
-                clearLocalStorageCallback: null,
-            };
-
-            // init the staticrypt engine
-            const staticrypt = staticryptInitiator.init(staticryptConfig, templateConfig);
-
-            // try to automatically decrypt on load if there is a saved password
-            window.onload = async function () {
-                const { isSuccessful } = await staticrypt.handleDecryptOnLoad();
-
-                // if we didn't decrypt anything on load, show the password prompt. Otherwise the content has already been
-                // replaced, no need to do anything
-                if (!isSuccessful) {
-                    // hide loading screen
-                    document.getElementById("staticrypt_loading").classList.add("hidden");
-                    document.getElementById("staticrypt_content").classList.remove("hidden");
-                    document.getElementById("staticrypt-password").focus();
-
-                    // show the remember me checkbox
-                    if (isRememberEnabled) {
-                        document.getElementById("staticrypt-remember-label").classList.remove("hidden");
-                    }
-                }
-            };
-
-            // handle password form submission
-            document.getElementById("staticrypt-form").addEventListener("submit", async function (e) {
-                e.preventDefault();
-
-                const password = document.getElementById("staticrypt-password").value,
-                    isRememberChecked = document.getElementById("staticrypt-remember").checked;
-
-                const { isSuccessful } = await staticrypt.handleDecryptionOfPage(password, isRememberChecked);
-
-                if (!isSuccessful) {
-                    alert(templateError);
-                }
-            });
-        </script>
-    </body>
+        <div class="bookmark-bar-instructions">
+            <h2>What to do if you don't see the Bookmark bar</h2>
+            <div>
+                If you don't see the bookmark bar at the top of your screen, then you can activate it by just pressing Ctrl, Shift, and the letter B all at the same time!
+            </div>
+        </div>
+    </div>
+</body>
 </html>
